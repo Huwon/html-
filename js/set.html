@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append를 이용한 select 박스의 option 추가 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .sel{
+            border: 0;
+            outline: 0;
+            width: 200px;
+            height: 30px;
+            border: 1px solid #555555;
+            vertical-align: top;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .btn, .remove, .empty{
+            border: 0;
+            outline: 0;
+            border: 1px solid #cccccc;
+            vertical-align: top;
+            font-size: 14px;
+            color: #333333;
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $(".btn").click(function(){
+                $(".sel").append("<option>대구광역시</option>");
+                $(".sel").append("<option>인천광역시</option>");
+                
+            });
+            $(".remove").click(function(){
+                $(".sel").remove();
+            });
+            $(".empty").click(function(){
+                $(".sel").empty();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <select class="sel">
+        <option>
+            지역을 선택하세요
+        </option>
+        <option>서울특별시</option>
+        <option>부산광역시</option>
+
+    </select>
+    <button class="btn">추가</button>
+    <button class="remove">삭제</button>
+    <button class="empty">비우기</button>
+
+
+</body>
+</html>

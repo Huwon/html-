@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+   
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="logo-wrap">
+        <h1 class="roboto">GREEN ARCADEMY</h1>
+        <h2 class="roboto">Enterprise Groupware System</h2>
+    </div>
+    <div class="login-wrap">
+        <div class="login-box">
+            <!-- 로그인 되면 action에 설정된 파일로 이동/autocomplete:자동완성기능(이전에 입력한게 그대로 뜸) -->
+            <form method="POST" action="grp_member_insert.html" autocomplete="off">
+                <select name="team">
+                    <option value="">소속</option>
+                    <option value="100">인사팀</option>
+                    <option value="200">경영팀</option>
+                    <option value="300">운영팀</option>
+                    <option value="400">회계팀</option>
+                    <option value="500">사회복지팀</option>
+                </select>
+                <select name="grad">
+                    <option value="">직책</option>
+                    <option value="100">팀장</option>
+                    <option value="200">과장</option>
+                    <option value="300">부장</option>
+                    <option value="400">대리</option>
+                    <option value="500">주임</option>
+                    <option value="600">사원</option>
+                </select>
+                <input type="text" name="userid" id="userid" placeholder="직원번호" required tabindex="3"/>
+                <input type="text" name="username" id="username" placeholder="직원명" required tabindex="4"/>
+                <input type="password" name="passwd" id="passwd" placeholder="비밀번호" required tabindex="5"/>
+                <input type="password" name="repasswd" id="repasswd" placeholder="비밀번호 확인" required tabindex="6"/>
+                <div class="">
+                    <button type="submit" class="btn roboto">REGISTRATION</button>
+                </div>
+                <div class="register-wrap">
+                    <a href="grp_login.html" class="">로그인</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+</html>
+
+
+
+

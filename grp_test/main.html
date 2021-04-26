@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/jquery.treeview_2.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+
+
+    <style>
+       .page-main-left{
+        width: 69.7%;
+       
+        padding: 20px;
+       }
+       .page-main-right{
+           width: 29.7%;
+           
+        }
+
+        .main-right-top{
+            height: 260px;
+        }
+        .main-right-bottom{
+            height: 220px;
+        }
+
+        .buseo-icon{
+            width: 40px;
+            height: 40px;
+            margin-right:20px;
+        }
+
+        .buseo-icon img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .attend-btn-on{
+            width: 220px;
+            border: 1px solid #edeff5;
+            border-radius: 50px;
+            background-color: transparent;
+            color: #cccccc;
+            padding: 10px 0;
+        }
+
+        .attend-btn-off{
+            width: 220px;
+            border: 1px solid #607D8B;
+            border-radius: 50px;
+            background-color: transparent;
+            color: #607D8B;
+            padding: 10px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="font18 center" style="color: black;
+                    "> HELLO COMPANY</h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="" style="color:black;
+                        font-size: 20px;
+                        font-weight: 700;"></div>
+                        <div class="auth">
+                            <span class="font16 weight700 noto ">administrator page</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <a href="admin.html">시스템공지사항</a>
+        
+                            </li>
+                            
+                            <li>
+                                <a href="member_chart.html">조직도</a>
+        
+                            </li>
+                            <li>
+                                직원관리
+                                <ul>
+                                    <li>1.<a href="member_list.html"> 직원목록</a></li>
+                                    <li>2. <a href="member_register.html">직원등록</a>
+                                    </li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                홍보
+                                <ul>
+                                    <li>1.<a href="marketing_outside.html"> 대외홍보사항</a></li>
+                                    <li>2. <a href="marketing_inside.html">대내홍보사항</a>
+                                    </li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                커뮤니티
+                                <ul>
+                                    <li>1.<a href="community.html"> 공지사항
+                                        </a></li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                전자결재
+                                <ul>
+                                    <li>1.<a href="approval_main.html" target="_blank"> 전자결재
+                                            목록</a></li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                문서관리
+                                <ul>
+                                    <li>1.<a href="report_inside.html">사내문서</a>
+                                    </li>
+                                    <li>1.<a href="report_outside.html">대외문서</a>
+                                    </li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                일정관리
+                                <ul>
+                                    <li>1.<a href="calender_list.html"> 일정 목록</a>
+                                    </li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                근태관리
+                                <ul>
+                                    <li>1.<a href="attend_chk.html"> 근태현황</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+        
+                            <li>
+                                자료실
+                                <ul>
+                                    <li>1.<a href="file.html">사내문서양식 </a>
+                                    </li>
+                                    <li>2.<a href="file_outside.html"> 대외문서양식</a>
+                                    </li>
+        
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../login2/login.html">로그아웃</a>
+                                
+                            </li>
+        
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right">
+                    <div class="page-main-wrap flex flex-justify">
+                        <div class="page-main-left bg-white">
+                            <div class="title">
+                                <h2 class="font16 noto m-b10">결제 대기 문서</h2>
+                                
+                            </div>
+                            <div class="app-content m-t20">
+                                <div style="border-bottom: 1px solid #e7e7e7; padding-bottom: 10px;" class="app-list flex flex-justify noto weight700 font14">
+                                    <div class="app-date" style="width: 10%;" >기안일</div>
+                                    <div class="app-form " style="width: 10%;">문서양식</div>
+                                    <div class="app-subject center" style="width: 70%;">문서제목</div>
+                                    <div class="app-file" style="width: 10%;">파일</div>
+                                </div>
+                                <div class="center p-tb10">
+                                    <span class="noto font16">결재할 문서가 없습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-main-right">
+                            <div class="main-right-top  bg-white p20" >
+                                <div class="main-attend">
+                                    <div class="title">
+                                        <h2 class="font16 noto m-b10">근태관리</h2>
+                                        <p>2020년 9월 15일 화요일</p>
+                                    </div>
+                                    <div class="attend flex flex-justify noto font14 weight700 m-t20">
+                                        <span>출근시간</span>
+                                        <span>AM 08:55</span>
+                                    </div>
+                                    <div class="attend flex flex-justify noto font14 weight700 m-t10">
+                                        <span>퇴근시간</span>
+                                        <span>00 00:00</span>
+                                    </div>
+                                    <div class="attend flex flex-justify noto font14 weight700 m-t10">
+                                        <span>현재상태</span>
+                                        <span>
+                                            <select class="sel-attend">
+                                                <option value="">근무</option>
+                                                <option value="">외근</option>
+                                                <option value="">퇴근</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <div class="attend flex flex-justify noto font14 weight700 m-t10">
+                                        <button class="noto font14 weight700 attend-btn-on" >출근</button>
+                                        <button class="noto font14 weight700 attend-btn-off">퇴근</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-right-bottom  bg-white m-t10 p20">일정</div>
+                        </div>
+                    </div>
+                    <div class="page-main-bottom  flex flex-justify m-t10">
+                        <div class="page-bottom-left bg-white p20" style="width: 49.7%;" >
+                            <div class="title">
+                                <h2 class="font16 noto m-b10">시스템 공지사항</h2>
+                                
+                            </div>
+                            <div class="app-content m-t20">
+                                <div class="app-list flex flex-justify ">
+                                    <table>
+                                        <tr class="center weight700 font14"  style=" border-bottom: 1px solid #e7e7e7; padding-bottom: 10px;">
+                                            <td class="td-10">분류</td>
+                                            <td class="td-10">작성자</td>
+                                            <td >제목</td>
+                                            <td class="td-20">등록일</td>
+                                        </tr>
+                                        <tr class="center">
+                                            <td class="td-10">일반</td>
+                                            <td class="td-10">관리자</td>
+                                            <td >근태관리 안내</td>
+                                            <td class="td-20">2020-09-08</td>
+                                        </tr>
+                                     </table>
+                                </div>
+                                <div class="p-tb10">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-bottom-right bg-white p20"  style="width: 49.7%;">
+                            <div class="title">
+                                <h2 class="font16 noto m-b10">공지사항</h2>
+                                
+                            </div>
+                            <div class="notic-content flex flex-justify p-tb10"  style="border-bottom: 1px solid #e7e7e7;">
+                                <div class="notice-left">
+                                    <p class="noto weight700 font14"><span style="color: red; margin-right: 10px;">[긴급]</span>금일 제 21회 이사회 개최.</p>
+                                </div>
+                                <div class="notice-right">
+                                    <span class="noto font14" style="color: #555555;" >2020.09.15</span>
+                                </div>
+                            </div>
+                            <div class="notic-content flex flex-justify p-tb10"  style="border-bottom: 1px solid #e7e7e7;">
+                                <div class="notice-left">
+                                    <p class="noto weight700 font14"><span style="margin-right: 10px;">[일반]</span>인사발령 안내.</p>
+                                </div>
+                                <div class="notice-right">
+                                    <span class="noto font14" style="color: #555555;" >2020.09.15</span>
+                                </div>
+                            </div>
+                            <div class="notic-content flex flex-justify p-tb10"  style="border-bottom: 1px solid #e7e7e7;">
+                                <div class="notice-left">
+                                    <p class="noto weight700 font14"><span style="color: red; margin-right: 10px;">[공지]</span>부서장 확인이 필요한 인사조치가 있습니다. 확인부탁드립니다.</p>
+                                </div>
+                                <div class="notice-right">
+                                    <span class="noto font14" style="color: #555555;" >2020.09.15</span>
+                                </div>
+                            </div>
+                            <div class="notic-content flex flex-justify p-tb10"  style="border-bottom: 1px solid #e7e7e7;">
+                                <div class="notice-left">
+                                    <p class="noto weight700 font14"><span style="color: red; margin-right: 10px;">[공지]</span>부서장 확인이 필요한 인사조치가 있습니다. 확인부탁드립니다.</p>
+                                </div>
+                                <div class="notice-right">
+                                    <span class="noto font14" style="color: #555555;" >2020.09.15</span>
+                                </div>
+                            </div>
+                            <div class="notic-content flex flex-justify p-tb10"  style="border-bottom: 1px solid #e7e7e7;">
+                                <div class="notice-left">
+                                    <p class="noto weight700 font14"><span style="color: red; margin-right: 10px;">[공지]</span>부서장 확인이 필요한 인사조치가 있습니다. 확인부탁드립니다.</p>
+                                </div>
+                                <div class="notice-right">
+                                    <span class="noto font14" style="color: #555555;" >2020.09.15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+<script>
+    $(function () {
+        $("tr:nth-child(2n+1)").addClass("tr-even");
+    });
+</script>
+</html>

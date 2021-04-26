@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+
+<style>
+
+    .logo a{
+        color: black;
+    }
+
+    .ctr a{
+        color: black;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+    <div class="admin-page">
+
+        <div class="logo">
+            <h1><a href="main.html">HELLO COMPANY</a></h1>
+            <h3>administrator page</h3>
+        </div>
+        <div class="menu">
+
+            <h4>NAVIGATION</h4>
+            <div class="tree-wrap">
+                <div id="sidetreecontrol" class="ctr">
+                    <a href="#" class="tab active" id="open">전체닫기</a>
+                    <a href="#" class="tab" id="close">전체열기</a>
+                </div>
+                <div class="clearfix"></div>
+                <ul id="tree">
+                    <li>
+                        <a href="admin.html">시스템공지사항</a>
+
+                    </li>
+                    
+                    <li>
+                        <a href="member_chart.html">조직도</a>
+
+                    </li>
+                    <li>
+                        직원관리
+                        <ul>
+                            <li>1.<a href="member_list.html"> 직원목록</a></li>
+                            <li>2. <a href="member_register.html">직원등록</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        홍보
+                        <ul>
+                            <li>1.<a href="marketing_outside.html"> 대외홍보사항</a></li>
+                            <li>2. <a href="marketing_inside.html">대내홍보사항</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        커뮤니티
+                        <ul>
+                            <li>1.<a href="community.html"> 공지사항
+                                </a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        전자결재
+                        <ul>
+                            <li>1.<a href="approval_main.html" target="_blank"> 전자결재
+                                    목록</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        문서관리
+                        <ul>
+                            <li>1.<a href="report_inside.html">사내문서</a>
+                            </li>
+                            <li>1.<a href="report_outside.html">대외문서</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        일정관리
+                        <ul>
+                            <li>1.<a href="calender_list.html"> 일정 목록</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        근태관리
+                        <ul>
+                            <li>1.<a href="attend_chk.html"> 근태현황</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
+                    <li>
+                        자료실
+                        <ul>
+                            <li>1.<a href="file.html">사내문서양식 </a>
+                            </li>
+                            <li>2.<a href="file_outside.html"> 대외문서양식</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../grp_test/login.html">로그아웃</a>
+                        
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-top">
+                <span class="welcome"> </span>
+                <div class="clearfix"></div>
+            </div>
+            <h2>시스템 공지사항</h2>
+            <div class="btn" style="padding: 0 8px;">
+                <button type="" onclick="location.href='board_create.html'" class="mod">
+                     글쓰기</button>
+                <button type="" class="mod">삭제</button>
+            </div>
+            <div class="system-main">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>분류</td>
+                        <td>번호</td>
+                        <td>작성자</td>
+                        <td>제목</td>
+                        <td>등록일</td>
+                        <td>조회수</td>
+                        <td>문서번호</td>
+                        <td>수정/삭제
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>10</td>
+                        <td>관리자</td>
+                        <td>근태관리</td>
+                        <td>2020-09-08</td>
+                        <td>25</td>
+                        <td>2156</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                                onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>9</td>
+                        <td>관리자</td>
+                        <td>전자결재 오류건 수정</td>
+                        <td>2020-08-29</td>
+                        <td>64</td>
+                        <td>2155</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>8</td>
+                        <td>관리자</td>
+                        <td>부서장 날인 등록 안내</td>
+                        <td>2020-08-17</td>
+                        <td>16</td>
+                        <td>2154</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>공지</td>
+                        <td>7</td>
+                        <td>관리자</td>
+                        <td>시스템 업데이트 일정 안내</td>
+                        <td>2020-08-15</td>
+                        <td>88</td>
+                        <td>2153</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>6</td>
+                        <td>관리자</td>
+                        <td>전자결재 오류건 수정</td>
+                        <td>2020-08-02</td>
+                        <td>88</td>
+                        <td>2152</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>5</td>
+                        <td>관리자</td>
+                        <td>커뮤니티 업테이트 이후 이용방법</td>
+                        <td>2020-07-12</td>
+                        <td>57</td>
+                        <td>2151</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>4</td>
+                        <td>관리자</td>
+                        <td>개인정보 수정 안내</td>
+                        <td>2020-07-10</td>
+                        <td>35</td>
+                        <td>2150</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>3</td>
+                        <td>관리자</td>
+                        <td>메일 수신자 선택 오류 수정</td>
+                        <td>2020-06-26</td>
+                        <td>64</td>
+                        <td>2149</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>일반</td>
+                        <td>2</td>
+                        <td>관리자</td>
+                        <td>문서관리 목록 안내</td>
+                        <td>2020-05-07</td>
+                        <td>73</td>
+                        <td>2448</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>공지</td>
+                        <td>1</td>
+                        <td>관리자</td>
+                        <td>시스템 공지</td>
+                        <td>2020-05-01</td>
+                        <td>69</td>
+                        <td>2447</td>
+                        <td>
+                            <button type="button" class="s-btn-on"
+                            onclick="location.href='board_modify.html?id=10'">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="page-grp">
+                    <span class="page"><i class="fas fa-angle-double-left"></i></span>
+                    <span class="page"><i class="fas fa-angle-left"></i></span>
+
+                    <span class="page active">1</span>
+
+                    <span class="page"><i class="fas fa-angle-right"></i></span>
+                    <span class="page"><i class="fas fa-angle-double-right"></i></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+
+</html>

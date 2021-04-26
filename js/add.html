@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addClass, removeClass를 이용한 디자인 변경</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .content{
+            background-color: #e7e7e7;
+            padding: 20px;
+            border: 1px solid #cccccc;
+        }
+
+        .active{
+            background-color: rosybrown;
+            color: white;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".add").click(function(){
+                // !important : 겹친다면 이게 우선
+                $(".content").addClass("!important active");
+            });
+            $(".remove").click(function(){
+               
+                $(".content").removeClass("active");
+            });
+            $(".toggle").click(function(){
+               
+               $(".content").toggleClass("active");
+           });
+           
+        });
+    </script>
+
+</head>
+<body>
+    <button class="add">변경</button>
+    <button class="remove">이전</button>
+    <button class="toggle">토글</button>
+
+
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

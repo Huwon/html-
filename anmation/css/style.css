@@ -1,0 +1,121 @@
+@charset 'utf-8';
+
+header{
+    font-family: 'Merienda', cursive;
+
+    background-image: url(../images/pencil.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container{
+    /* 무조건 1600하면은 안됨 */
+    width: 1600px;
+    margin: 0 auto;
+    padding: 50px 0;
+
+  
+}
+
+.gnb ul{
+    display: flex;
+}
+
+.gnb ul li{
+    margin-left: 80px;
+   
+}
+
+.gnb ul li a{
+    color: white;
+}
+.logo h1{
+    color: white;
+}
+
+.page-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bg-wrap{
+    display: flex;
+    justify-content: center;
+    /* 세로를 기준으로 중심-height필수 */
+    align-items: center;
+    height: calc(100vh - 120px);
+}
+
+.bg-content{
+    color: white;
+    text-align: center;
+      /* 안보였다가 보이게 하는거 */
+      opacity: 0;
+
+      animation: run 1s 0.5s forwards;
+      margin-top: 100px;
+}
+
+/* 애니메이션 */
+@keyframes run {
+    /* run말고 내가 아무거나 붙이면 됨 */
+    100%{
+        opacity: 1;
+        margin: 0;
+    }
+}
+
+.bg-content h1{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.bg-content h3{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.bg-content .btn{
+    background-color: #f8c300;
+    color: white;
+    padding: 20px 45px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: 'Merienda', cursive;
+
+}
+
+section{
+    height: 800px;
+    text-align: center;
+    font-size: 40px;
+}
+
+section:nth-child(2n){
+    background-color: wheat;
+}
+
+.up{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:rgba(0,0,0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+
+    z-index: 9999;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+
+    display: none;
+
+    cursor: pointer;
+}

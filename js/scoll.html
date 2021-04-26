@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window, scroll, scrollTop, position, attr, data-color</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Roboto', sans-serif;
+            background-color: #10e88a;
+            transition: 200ms;
+        }
+
+        div{
+            padding-top:100px;
+            height: 100vh;
+            text-align-last: right;
+            color:black;
+        }
+
+        h1{
+            font-size: 200px;
+            font-weight: 900;
+            margin: 0 30px;
+
+        }
+
+        p{
+            line-height: 2;
+            text-align-last: right;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="one" data-color="#10e88a">
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque animi quam obcaecati non voluptatem, corporis illo iste id alias nam voluptates, fugit culpa perspiciatis debitis sunt dolorem minima laboriosam possimus dolor eos quos corrupti! Autem sit nihil, fugit repellendus repudiandae vitae quidem veniam voluptates incidunt earum voluptas, nisi voluptatibus dolor esse sapiente cupiditate commodi voluptatum sint omnis nulla doloribus soluta cum. Amet, in! Eveniet deleniti consectetur provident, quis quibusdam beatae rerum totam ab quas veritatis officia nam. Id error excepturi sunt placeat aliquid mollitia velit ab ducimus quidem delectus optio obcaecati, ea nobis dolorem cumque a rerum quam iusto officia?</p>
+    </div>
+    <div id="two" data-color="#7f3995">
+        <h1>Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci totam unde, eos error nam est sequi quidem fugiat ab molestias facilis, explicabo nisi, numquam culpa quaerat eius quasi reprehenderit non. Molestiae quaerat voluptates quia enim recusandae repellendus dolorum aspernatur nemo, deleniti quasi, pariatur animi illo libero ducimus architecto at blanditiis numquam deserunt veritatis praesentium maxime! Dolorem veritatis quaerat, ex necessitatibus vel consequuntur accusantium atque alias. Asperiores voluptatum sapiente quis libero obcaecati labore temporibus quibusdam dolorem quo aliquam corporis id commodi iure unde molestiae, repellat eligendi accusantium? Nostrum recusandae, totam iusto exercitationem dolorem quod aperiam minima. Quam, reprehenderit ab. Fugiat, quasi!</p>
+    </div>
+    <div id="three" data-color="#0d78e7">
+        <h1>Dolor</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum voluptatum animi omnis adipisci? Asperiores, autem! Perspiciatis magni sequi provident facere, nisi minus accusamus reiciendis, corrupti suscipit quod quidem! Repellat impedit asperiores quam, dolorum delectus dicta sed cupiditate repudiandae. Cumque repudiandae totam eius quibusdam vel. Odit ullam doloremque veniam nisi, deserunt soluta accusamus, velit tempora libero ad nesciunt porro quibusdam, ratione illum? Sit aliquam repudiandae mollitia pariatur iste. Accusantium provident blanditiis ducimus earum nihil doloribus eius iure, sed voluptatem excepturi assumenda nesciunt quod recusandae adipisci eligendi et, ea aperiam nobis sapiente quis fugiat suscipit quae! Magni, officia. Ducimus, totam? Dignissimos, voluptas.</p>
+    </div>
+    <div id="four" data-color="#f88f18">
+        <h1>Sit</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem odio at rem? Eos quibusdam eum accusantium. Assumenda, repellat minus ipsam soluta ratione culpa doloribus doloremque eius laborum ipsa vel nihil voluptate, quia delectus mollitia voluptates minima exercitationem inventore fugiat sint distinctio accusamus molestias corrupti perferendis. Vel quos dicta hic, eligendi eum eius voluptate nesciunt rem expedita ut qui! Sit totam iusto laudantium fugit rem architecto voluptas placeat corrupti natus. Ex rem fuga, quas expedita accusamus suscipit laboriosam quod possimus a error tenetur dicta omnis maiores quidem. Fugiat, consectetur incidunt natus suscipit odit nobis soluta nihil ipsum dolor molestias tempora eveniet!</p>
+    </div>
+    <div id="five" data-color="#e91e63">
+        <h1>Amet</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis alias labore nobis tenetur praesentium exercitationem nam commodi nulla eaque vel, laborum asperiores dolorem ipsum? Ut non sit illum magnam! Ratione vitae tempore sit veritatis fugiat laborum ullam, obcaecati totam voluptatibus voluptatum voluptatem architecto laboriosam, accusantium doloribus officiis, ab consectetur voluptas. Eum nemo aliquid est odit perferendis nihil delectus dolor sapiente, ad explicabo? Culpa non ullam itaque eum nobis alias iure laudantium vero vitae reprehenderit aperiam, esse dolores, ea tempora, inventore nisi illum molestias molestiae ipsa? Odio quae, tempore expedita magni repellendus vel laboriosam molestias. Corporis consequuntur autem soluta velit.</p>
+    </div>
+</body>
+<script>
+    $(function(){
+        $(window).on("scroll", function(){
+            if( $(window).scrollTop() > $("#one").position().top ){
+                $("body").css("background", $("#one").attr("data-color")); 
+            }
+            if( $(window).scrollTop() > $("#two").position().top ){
+                $("body").css("background", $("#two").attr("data-color")); 
+            }
+            if( $(window).scrollTop() > $("#three").position().top ){
+                $("body").css("background", $("#three").attr("data-color")); 
+            }
+            if( $(window).scrollTop() > $("#four").position().top ){
+                $("body").css("background", $("#four").attr("data-color")); 
+            }
+            if( $(window).scrollTop() > $("#five").position().top - 200 ){
+                $("body").css("background", $("#five").attr("data-color")); 
+            }
+        });
+    });
+</script>
+</html>

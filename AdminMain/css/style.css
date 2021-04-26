@@ -1,0 +1,311 @@
+@charset 'utf-8';
+
+header{
+    width: 100%;
+    height: 70px;
+    background-color: #348cd4;
+}
+
+main{
+    width: 100%;
+    background-color: white;
+}
+
+.logo, .menu{
+    width: 15%;
+    float: left;
+}
+
+.auth, .main{
+    width: 85%;
+    float: left;
+}
+
+.clearfix{ /*float써서 꼭 해줘야함*/
+    clear: both;
+}
+
+.menu{
+    border-right: 1px solid #e8e8e8;
+    height: 100vh;
+    padding: 30px 20px;
+}
+
+.menu h4{
+    color: black;
+    text-align: center;
+}
+
+.main{
+    background-color: #eeefef;
+    height: 100vh;
+    padding: 20px 30px;
+}
+
+.main-top .welcome{
+    float: left;
+    color: black;
+    font-weight: 600;
+}
+
+.main-top .sitemap{
+    float: right;
+    color: black;
+    font-weight: 400;
+}
+
+.main-panel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.main-panel div{
+    width: 24%;
+    height: 200px;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.main-panel .member{
+    background-color: #8892d6;
+}
+
+.main-panel .article{
+    background-color: #45bbe0;
+}
+
+.main-panel .download{
+    background-color: #f06292;
+}
+
+.main-panel .request{
+    background-color: #78c350;
+}
+
+.main-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.main-content div{
+    width: 32%;
+    height: 300px;
+    border-radius: 2px;
+    background-color: white;
+    padding: 20px;
+    border-right: 2px solid #e8e8e8;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.menu ul{
+    margin-top: 20px;
+}
+
+.menu ul li{
+    line-height: 2.5;
+}
+
+.menu ul li:first-child a{
+    color: #7ab3e1;
+    font-weight: 500;
+}
+
+.menu ul li a{
+    color: black;
+}
+
+.menu .icon{
+    margin-right: 10px;
+}
+
+.menu .icon i{
+    color: #7ab3e1;
+}
+
+.info{
+    display: flex;
+    /* 끝으로 알아서 가로배치 */
+    justify-content: flex-end;
+    /* 세로배치-높이값이 같이 있어야함 */
+    align-items: center;
+    height: 70px;
+}
+
+.search{
+    width: 200px;
+    height: 35px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50px;
+}
+
+form{
+    /* 상대좌표 잡아주기 */
+    position: relative;
+}
+
+.zoom{
+    position: absolute;
+    /* 세로 가운데 배치 */
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.zoom i{
+    color:rgba(255,255,255,0.8);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.msg{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    text-align:center;
+    /* 높이값과 일치 */
+    line-height: 15px;
+
+    position: absolute;
+    top: -13px;
+    right: -5px;
+}
+
+.bell{
+    position: relative;
+}
+
+.bell i{
+    font-size: 24px;
+    color: white;
+}
+
+.info > div{
+    margin-right: 30px;
+
+}
+
+.pic .user img{
+    width: 45px;
+    height: 45px;
+    /* span 타입이라 display-inline해야함 */
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.logo h2{
+    text-align: center;
+    /* 세로 정렬해야 하는게 한줄 일때만 쓰기 line-height*/
+    line-height: 70px;
+}
+
+.logo h2 a{
+    color: white;
+}
+
+.bar{
+    display: none;
+}
+
+.submenu{
+    display: none;
+}
+
+
+@media (max-width:800px){
+
+    .logo, .menu{
+        width: 100%;
+        float: none;
+    }
+    
+    .auth, .main{
+        width: 100%;
+        float: none;
+    }
+
+    .auth{
+        display: none;
+    }
+
+    /* 넓이가 아니지만 높이가 꽉 채워쓰기로 되어 있어서 수정 
+    메뉴는 버튼을 눌러서 나오게 하기 위해서 일단 안보이게 하기*/
+    .menu{
+        display: none;
+        }
+    .main{
+            background-color: #eeefef;
+            /* 내용물 만큼만 채우기-반응형할때 높이는 되도록 auto쓰면 좋음 */
+            height: auto;
+            padding: 20px 30px;
+        }
+    .main-panel{
+            display: block;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    .main-content{
+            display: block;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    .main-panel div{
+            width: 100%;
+            border-radius: 2px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+    .main-content div{
+            width: 100%;
+            height: 300px;
+            border-radius: 2px;
+            background-color: white;
+            padding: 20px;
+            border-right: 2px solid #e8e8e8;
+            border-bottom: 2px solid #e8e8e8;
+            margin-top: 20px;
+        }
+
+    .logo{
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo h2 {
+
+    text-align: left;
+
+    }
+
+    .bar{
+        line-height: 70px;
+        /* 옆에 있는것과 같이 배치하기 /하나만 배치면 block */
+        display: inline-block;
+    }
+
+    .logo .bar a{
+        color: white;
+        font-size: 30px;
+    }
+
+    .submenu{
+        width: 100%;
+        height: 230px;
+        background-color:rgba(255,255,255, .9);
+        padding: 20px 30px;
+
+        position: absolute;
+        /* 아래위 순서정하기-9999: 가장 우선순위 */
+        z-index: 9999;
+
+        display: none;
+    }
+        
+
+}

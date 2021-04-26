@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab menu : addClass, removeClass, attr</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .tab-wrap{
+            width:600px;
+            margin: 0 auto;
+            
+        }
+
+        .tab{
+            padding: 8px 15px;
+            border: 1px solid #eeeeee;
+            border-radius: 50px;
+            text-decoration: none;
+            color: rgba(255,255,255,0.9);
+            font-weight: 700;
+            background-color: rgba(10,20,30,0.1);
+        }
+        .tab-list{
+            margin-bottom: 20px;
+        }
+        .active{
+            color: white;
+            background-color:wheat;
+            border: 1px solid transparent;
+        }
+        .tab-content{
+            display: none;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            background-color: #eeeeee;
+
+        }
+        .show{
+            /* 한개만 보이게 하는거 */
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="tab-wrap">
+    <h1>tab menu</h1>
+
+    <nav class="tab-list">
+        <a href="#one" class="tab active">one</a>
+        <a href="#two" class="tab">two</a>
+        <a href="#three" class="tab">three</a>
+
+    </nav>
+    <div class="tab-content show" id="one">
+        1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure, reiciendis iusto inventore aperiam cum eligendi atque a quam unde numquam at tempore suscipit mollitia blanditiis impedit minima consequuntur corrupti? Autem aperiam ea error corporis!
+
+    </div>
+
+    <div class="tab-content" id="two">
+        2.Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure, reiciendis iusto inventore aperiam cum eligendi atque a quam unde numquam at tempore suscipit mollitia blanditiis impedit minima consequuntur corrupti? Autem aperiam ea error corporis!
+
+    </div>
+
+    <div class="tab-content" id="three">
+        3.Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure, reiciendis iusto inventore aperiam cum eligendi atque a quam unde numquam at tempore suscipit mollitia blanditiis impedit minima consequuntur corrupti? Autem aperiam ea error corporis!
+
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        $(".tab").on("click", function(e){
+            $(".tab").removeClass("active");
+            $(".tab-content").removeClass("show");
+
+            // 누르는 버튼 색상 변하게 하기
+            $(this).addClass("active");
+            $( $(this).attr("href") ).addClass("show");
+            e.preventDefault();
+        });
+    });
+</script>
+</html>

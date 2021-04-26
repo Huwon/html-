@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경이미지를 이용한 owl carousel</title>
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.js"></script>
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .item{
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 300px;
+            height: 250px;
+            
+            position: relative; 
+        }
+        section{
+            width: 1500px;
+            margin: 0 auto;
+
+        }
+        .item-title h1{
+            text-align: center;
+            margin: 30px 0;
+            font-size: 40px;
+        }
+        .rec{
+            width: 50px;
+            height: 50px;
+            border: 3px solid tomato;
+            border-radius: 50%;
+            background-color:rgba(255, 255,255, 0.6);
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            line-height: 45px;
+            font-weight: 700;
+            color: tomato;
+
+           /* 위치변경 
+           position: absolute;
+            right: 0px;
+            top: 0px; */
+        }
+
+        .bag{
+            width: 50px;
+            height: 50px;
+            border: 3px solid black;
+            border-radius: 50%;
+            background-color:black;
+            display: inline-block;
+            font-size: 20px;
+            text-align: center;
+            line-height: 45px;
+            color: white;
+
+            
+        }
+        .love{
+            width: 50px;
+            height: 50px;
+            border: 3px solid white;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+            font-size: 20px;
+            text-align: center;
+            line-height: 45px;
+            color: red;
+        }
+        .card{
+            width: 50px;
+            height: 50px;
+            border: 3px solid red;
+            border-radius: 50%;
+            background-color: red;
+            display: inline-block;
+            font-size: 20px;
+            text-align: center;
+            line-height: 45px;
+            color: white;
+
+        }
+        .icon-grp{
+            position: absolute;
+            right: 60px;
+            top: 100px;
+
+        }
+        .item-content h2 {
+            margin-bottom: 10px;
+            bottom: 0%;
+        }
+        .price {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .con{
+            
+            margin: 0 auto;
+            /*div라 margin으로*/
+            display: flex;
+            justify-content: space-between;
+            background-color: violet;
+           
+        }
+        .cons{
+            width: 380px;
+            background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="item-title">
+            <h1>BEST ITEMS</h1>
+        </div>
+
+        <div class="item-list owl-carousel owl-theme">
+            <div class="item" style="background-image: url(images/apple.jpg);">
+            <span class="rec">BEST</span></div>
+            <div class="item" style="background-image: url(images/bana.jpg);">
+                <span class="icon-grp">
+            <span class="bag"><i class="fas fa-shopping-bag"></i></span>
+            <span class="love"><i class="fas fa-heart"></i></span>
+            <span class="card"><i class="fas fa-credit-card"></i></span>
+        </span>
+        <div class="con">
+            <div class="cons">
+        <div class="item-content">
+            <h2>BANANA</h2>
+            <p>Lorem, ipsum dolor.</p>
+            <span class="price">1600 <del>2000</del></span>
+
+        </div>
+    </div>
+    </div>
+            </div>
+            <div class="item" style="background-image: url(images/ornge.jpg);"></div>
+            <div class="item" style="background-image: url(images/berry.jpg);"></div>
+            <div class="item" style="background-image: url(images/remon.jpg);"></div>
+        </div>
+    </section>
+</body>
+<script>
+    $(function(){
+       var owl =  $(".owl-carousel");
+       owl.owlCarousel({
+           items:3,
+           loop:true,
+           nav:true,
+           dots:true,
+           margin:100
+       });
+    })
+</script>
+</html>

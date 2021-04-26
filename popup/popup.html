@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button type="button" onclick="popup('notice')">클릭</button>
+
+<script>
+	function popup(boardCode) {
+		var url = "grp_board/popup.jsp?boardCode="+boardCode;
+		var options = "width = 500, height = 500, top = 100, left = 200, location = no";
+		window.open(url, 'popup', options);
+	}
+</script>
+</body>
+</html>

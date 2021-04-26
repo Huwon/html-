@@ -1,0 +1,187 @@
+@charset 'utf-8';
+
+
+
+.page-top {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo h4 {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+
+main {
+    width: 100%;
+    background-color: white;
+}
+
+.menu {
+    border-right: 1px solid #e8e8e8;
+    height: 100vh;
+    padding: 30px 20px;
+    width: 15%;
+    float: left;
+}
+
+.menu h4 {
+    color: black;
+    text-align: left;
+}
+
+.main {
+    height: 100vh;
+    padding: 20px 30px;
+    width: 85%;
+    float: left;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+.main-top .welcome {
+    float: left;
+    color: black;
+    font-weight: 600;
+}
+
+.menu ul {
+    margin-top: 20px;
+}
+
+.menu ul li {
+    line-height: 2.5;
+}
+
+.menu ul li:nth-child(1) a {
+    color: #7ab3e1;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.menu ul li a:hover {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.menu ul li a {
+    color: black;
+}
+
+
+.system-main {
+    padding: 0 8px;
+
+}
+
+h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.btn {
+
+    text-align: right;
+    margin-bottom: 10px;
+
+}
+
+.mod {
+
+
+
+    display: inline-block;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+
+    border: 1px solid #dddddd;
+
+}
+
+.mod:hover {
+    cursor: pointer;
+    background-color: #3f5ab5;
+    color: white;
+
+}
+
+tr {
+    text-align: center;
+}
+
+
+tr:first-child {
+    background-color: #8abbe2;
+    color: black;
+    font-size: 17px;
+}
+
+td:nth-child(1) {
+    width: 5%;
+}
+
+td:nth-child(2) {
+    width: 10%;
+}
+
+td:nth-child(3) {
+    width: 10%;
+}
+
+td:nth-child(4) {
+    width: 15%;
+}
+
+td:nth-child(5) {
+    width: 10%;
+}
+
+td:nth-child(6) {
+    width: 10%;
+}
+
+td:nth-child(7) {
+    width: 10%;
+}
+
+tr {
+    height: 45px;
+}
+
+tr:nth-child(2n) {
+    background-color: #708da5;
+}
+
+.page-grp {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.page {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #dddddd;
+}
+
+
+.page:hover {
+    cursor: pointer;
+    background-color: #3f5ab5;
+    color: white;
+
+}

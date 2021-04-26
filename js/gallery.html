@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr를 이용한 갤러리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        .gallery-wrap{
+            display: flex;
+            width: 1200px;
+            justify-content: space-between;
+            margin: 0 auto;
+            
+        }
+
+        .large{
+            width: 39%;
+            border: 1px solid #cccccc;
+            padding: 10px;
+            /* 이미지는 inline 타입 */
+            display: inline-block;
+        }
+
+        .large img{
+            /* padding 10px을 써서 꽉 안차는거임 */
+            width: 100%;
+        }
+
+        .small{
+            width: 60%;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            /* 사진 1개 당 33%를 차지해서 100이 넘으면 자동으로 밑으로 내림 */
+            flex-wrap: wrap;
+        }
+
+        .image {
+            /* 사진 3개씩 정렬 */
+            width: 33%;
+            margin-bottom: 3px;
+            cursor: pointer;
+        }
+
+        .image img{
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <section class="gallery-wrap">
+        <article class="large" id="large">
+            <img src="images/1.jpg" alt="" title=""/>
+        </article>
+        <article class="small">
+            <div class="image">
+                <img src="images/2.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/3.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/4.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/5.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/6.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/7.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/8.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/9.jpg" alt="" title=""/>
+            </div>
+            <div class="image">
+                <img src="images/10.jpg" alt="" title=""/>
+            </div>
+        </article>
+    </section>
+    </main>
+</body>
+<script>
+    $(function(){
+        $(".image img").mouseover(function(){
+            var small = $(this).attr('src');
+            var large = $("#large img");
+            large.fadeOut(200, function(){
+                // src(html) : small(변경)
+                $(this).attr({src:small});
+                $(this).fadeIn(200);
+            });
+        });
+    });
+</script>
+</html>

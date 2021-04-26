@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+
+
+    <style>
+        tr:first-child {
+            background-color: #6f809a;
+        }
+
+        .tr-even {
+            /* 짝수일때 */
+            background-color: #eff3f9;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="noto center font18 "> 관리자페이지</h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="auth">
+                            <span class="font16 weight700 noto">{접속자 - 접속권한 0등급}</span>
+                        </div>
+                        <div class="logout">
+                            <a href="grp_login.html" class="noto font16 weight700">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <img src="images/folder-closed.gif" />사내조직/연락처
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_member_list.html"> 사원목록</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_member_register.html">사원등록</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_member_chart.html">조직도</a></li>
+                                    <li><img src="images/folder.gif" />4. <a href="grp_member_char_register.html">조직도
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />전자결재
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_main.html"
+                                            target="_blank"> 전자결재
+                                            목록</a></li>
+
+                                </ul>                                                                   
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />게시판관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_board_create.html"> 게시판 생성</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />일정관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_calender_list.html"> 일정 목록</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />근태관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_attend_info.html"> 근태현황</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_attend_myinfo.html"> 인사정보</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />설문조사
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_survey_open.html"> 진행중인 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_survey_close.html"> 마감된 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3.<a href="#"> 내가 만든 설문</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />자료실
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_file_upload.html"> 문서양식</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_file_upload.html"> 제품소개서</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />회사기본정보
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_company_info.html">회사기본정보</a></li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_company_info_register.html">회사기본정보
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right bg-white p10">
+                    <div class="page-main-wrap">
+                        <div class="page-member-top flex flex-justify">
+                            <div class="">
+                                
+                            </div>
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3 class="tomato font18 noto">
+                                <i class="fas fa-feather-alt"></i>설문조사 > 2.종료된 설문
+                            </h3>
+                        </div>
+                
+                        <div class="page-member-bottom">
+                            <div class="page-content">
+                                <table>
+                                    <tr class="center weight700 tr-color f6 font14 under  ">
+                                        <td class="td-10">번호</td>
+                                        <td class="td-10">설문상태</td>
+                                        <td class="">설문제목</td>
+                                        <td class="td-20">설문기간</td>
+                                        <td class="td-10">설문작성자</td>
+                                       
+                                    </tr> 
+                                    <tr class="center font14">
+                                        <td>10</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>9</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>8</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>7</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>6</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>5</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>4</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>3</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>2</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>1</td>
+                                        <td>진행중</td>
+                                        <td>연차사용 유효기간에 대한 설문조사</td>
+                                        <td>2020-09-14~2020-09-16</td>
+                                        <td>인사부장</td>
+                                    </tr>
+                                    
+                                   
+                                </table>
+                                <div class="page-grp center m-t10">
+                                    <span class="page "><a href=""><i class="fas fa-angle-double-left"></i></a></span>
+                                    <span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
+                                    <span class="page page-active"><a href="" class="f6">1</a></span>
+                                    <span class="page"><a href="">2</a></span>
+                                    <span class="page"><a href="">3</a></span>
+                                    <span class="page"><a href="">4</a></span>
+                                    <span class="page"><a href="">5</a></span>
+                                    <span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
+                                    <span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+<script>
+    $(function () {
+        $("tr:nth-child(2n+1)").addClass("tr-even");
+    });
+</script>
+</html>

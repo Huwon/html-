@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM>>홍보</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+
+<style>
+    tr:first-child {
+    background-color: #607D8B;
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.logo a{
+        color: black;
+    }
+
+h2 {
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+</style>
+
+
+
+</head>
+
+<body>
+
+    <div class="admin-page">
+
+        <div class="logo">
+            <h1><a href="main.html">HELLO COMPANY</a></h1>
+            <h3>administrator page</h3>
+        </div>
+        <div class="menu">
+
+            <h4>NAVIGATION</h4>
+            <div class="tree-wrap">
+                <div id="sidetreecontrol" class="">
+                    <a href="#" class="tab active" id="open">전체닫기</a>
+                    <a href="#" class="tab" id="close">전체열기</a>
+                </div>
+                <div class="clearfix"></div>
+                <ul id="tree">
+                    <li>
+                        <a href="admin.html">시스템공지사항</a>
+
+                    </li>
+                    
+                    <li>
+                        <a href="member_chart.html">조직도</a>
+
+                    </li>
+                    <li>
+                        직원관리
+                        <ul>
+                            <li>1.<a href="member_list.html"> 직원목록</a></li>
+                            <li>2. <a href="member_register.html">직원등록</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        홍보
+                        <ul>
+                            <li>1.<a href="marketing_outside.html"> 대외홍보사항</a></li>
+                            <li>2. <a href="marketing_inside.html">대내홍보사항</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        커뮤니티
+                        <ul>
+                            <li>1.<a href="community.html"> 공지사항
+                                </a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        전자결재
+                        <ul>
+                            <li>1.<a href="approval_main.html" target="_blank"> 전자결재
+                                    목록</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        문서관리
+                        <ul>
+                            <li>1.<a href="report_inside.html">사내문서</a>
+                            </li>
+                            <li>1.<a href="report_outside.html">대외문서</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        일정관리
+                        <ul>
+                            <li>1.<a href="calender_list.html"> 일정 목록</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        근태관리
+                        <ul>
+                            <li>1.<a href="attend_chk.html"> 근태현황</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
+                    <li>
+                        자료실
+                        <ul>
+                            <li>1.<a href="file.html">사내문서양식 </a>
+                            </li>
+                            <li>2.<a href="file_outside.html"> 대외문서양식</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../grp_test/login.html">로그아웃</a>
+                        
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-top">
+                <h2 class="m-b20">홍보 > 2. 대내 홍보사항</h2>
+                 <div class="page-member-top flex flex-justify m-t10 " style="padding: 0 8px;"> 
+                    <div class="btn m-t20 " >
+                        <button type="" onclick="location.href='marketing_create.html'" class="mod">
+                            등록</button>
+                            <button type="" onclick="location.href='marketing_modify.html'" class="mod">
+                                수정</button>
+                        <button type="" class="mod">삭제</button>
+                    </div>
+               
+                <div class="page-member-top  m-t20">
+                    <form method="post" action="member_list.html">
+                        <select class="" name="searchOpt">
+                            <option value="username">종류</option>
+                            <option value="userid">관련부서</option>
+                        </select>
+                        <input type="text" name="words" required style="margin-left:-2px" autocomplete="off"/>
+                        <button type="submit" class="btn-on" style="margin-left:-2px">검색</button>
+
+                    </form>
+                </div>
+
+                 </div> 
+                
+            </div>
+
+            <div class="system-main">
+                <table>
+                    <tr class="center weight700 tr-color f6 font14 ">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td class="td-5">번호</td>
+                        <td class="td-5">구분</td>
+                        <td>제목</td>
+                        <td class="td-10">종류</td>
+                        <td class="td-10">게시일자</td>
+                        <td class="td-10">종료일자</td>
+                        <td class="td-5">관련부서</td>
+                        <td class="td-5">담당자</td>
+                        <td class="td-5">첨부파일</td>
+                        
+                    </tr>
+                   
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">10</a></td>
+                        <td>대내</td>
+                        <td>영업부 김과장 대리 결혼</td>
+                        <td>경조사</td>
+                        <td>2020-09-16</td>
+                        <td>2020-09-25</td>
+                        <td>인사부</td>
+                        <td>박인턴</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">9</a></td>
+                        <td>대내</td>
+                        <td>영업부 김과장 대리 결혼</td>
+                        <td>경조사</td>
+                        <td>2020-09-16</td>
+                        <td>2020-09-25</td>
+                        <td>인사부</td>
+                        <td>박인턴</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">8</a></td>
+                        <td>대내</td>
+                        <td>영업부 김과장 대리 결혼</td>
+                        <td>경조사</td>
+                        <td>2020-09-16</td>
+                        <td>2020-09-25</td>
+                        <td>인사부</td>
+                        <td>박인턴</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">7</a></td>
+                        <td>대내</td>
+                        <td>영업부 김과장 대리 결혼</td>
+                        <td>경조사</td>
+                        <td>2020-09-16</td>
+                        <td>2020-09-25</td>
+                        <td>인사부</td>
+                        <td>박인턴</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">6</a></td>
+                        <td>대내</td>
+                        <td>영업부 김과장 대리 결혼</td>
+                        <td>경조사</td>
+                        <td>2020-09-16</td>
+                        <td>2020-09-25</td>
+                        <td>인사부</td>
+                        <td>박인턴</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">5</a></td>
+                        <td>대내</td>
+                        <td>총무부 이사원 부장 득녀</td>
+                        <td>경조사</td>
+                        <td>2020-80-22</td>
+                        <td>2020-09-25</td>
+                        <td>인사부</td>
+                        <td>박인턴</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">4</a></td>
+                        <td>대내</td>
+                        <td>이달의 우수사원 회계부 최경 사원</td>
+                        <td>우수사원</td>
+                        <td>2020-08-17</td>
+                        <td>2020-09-17</td>
+                        <td>인사부</td>
+                        <td>성시원</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">3</a></td>
+                        <td>대내</td>
+                        <td>이달의 우수사원 총무부 박하나 사원</td>
+                        <td>우수사원</td>
+                        <td>2020-07-17</td>
+                        <td>2020-08-17</td>
+                        <td>인사부</td>
+                        <td>성시원</td>
+                        <td>-</td>
+                       
+                    </tr>
+                    
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">2</a></td>
+                        <td>대내</td>
+                        <td>7월 사내 봉사활동 안내</td>
+                        <td>봉사</td>
+                        <td>2020-06-02</td>
+                        <td>2020-06-30</td>
+                        <td>사회복지부</td>
+                        <td>박대리</td>
+                        <td>-</td>
+                       
+                    </tr>
+                   
+                    <tr class="center font14">
+                        <td class="td-5"><input type="checkbox" /></td>
+                        <td> <a href="member_view.html" class="">1</a></td>
+                        <td>대내</td>
+                        <td>이달의 우수사원 경영기획부 김이슬 사원</td>
+                        <td>우수사원</td>
+                        <td>2020-05-17</td>
+                        <td>2020-06-17</td>
+                        <td>인사부</td>
+                        <td>성시원</td>
+                        <td>-</td>
+                       
+                    </tr>
+                   
+
+                   
+                </table>
+                
+                <div class="page-grp">
+                    <span class="page"><i class="fas fa-angle-double-left"></i></span>
+                    <span class="page"><i class="fas fa-angle-left"></i></span>
+
+                    <span class="page active">1</span>
+
+                    <span class="page"><i class="fas fa-angle-right"></i></span>
+                    <span class="page"><i class="fas fa-angle-double-right"></i></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+
+</html>

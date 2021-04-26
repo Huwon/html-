@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    line-height: 1;
+    /* 스크롤 움직임 처리 */
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul li{
+    /* list-style써도 됨 */
+    list-style-type: none;
+
+}
+
+button{
+    border: 0;
+    outline: 0;
+}

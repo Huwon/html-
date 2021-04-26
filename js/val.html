@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>val() 사용하여 value값 가져오기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        /* 가상요소 */
+        input::placeholder{
+            color:red
+        }
+
+        input[type="text"]{
+            border: 1px solid #00f;
+        }
+    </style>
+
+<script>
+    $(function(){
+        $(".btn").click(function(){
+            var str = $("#getValue").val();
+            // alert(str);
+        });
+    });
+</script>
+
+</head>
+<body>
+    <form name="" id="" class="" action="" method="post">
+        <!-- readonly읽기전용/ value 미리 저장해둘 값=palceholder-->
+        <input type="text" id="getValue" palceholder="값을 입력하세요" autofocus maxlength="12" required />
+
+        <!-- submit:입력된 값을 전송(디비저장) -->
+        <button type="submit"  class="btn">클릭</button>
+    </form>
+</body>
+</html>

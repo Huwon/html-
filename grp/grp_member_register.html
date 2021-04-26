@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+
+
+    <style>
+        /* 사진 */
+        .member-left{
+            width: 11%;
+            /* 해상도 계산해서 만들어 줘야함 max-width */
+            max-width: 192px;
+        }
+
+        .photo-area{
+            /* member-left의 width에 설정된 11%만큼 꽉 채워서 쓰겠다 */
+            width: 100%;
+        }
+
+        .photo-area img{
+            width: 100%;
+            height: 240px;
+            display: inline-block;
+        }
+
+        .member-right{
+            width: 88.7%;
+            max-width: 1728px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="noto center font18 "> 관리자페이지</h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="auth">
+                            <span class="font16 weight700 noto">{접속자 - 접속권한 0등급}</span>
+                        </div>
+                        <div class="logout">
+                            <a href="grp_login.html" class="noto font16 weight700">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <img src="images/folder-closed.gif" />사내조직/연락처
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_member_list.html"> 사원목록</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_member_register.html">사원등록</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_member_chart.html">조직도</a></li>
+                                    <li><img src="images/folder.gif" />4. <a href="grp_member_char_register.html">조직도
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />전자결재
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_main.html"
+                                            target="_blank"> 전자결재
+                                            목록</a></li>
+
+                                </ul>                                                                   
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />게시판관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_board_create.html"> 게시판 생성</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />일정관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_calender_list.html"> 일정 목록</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />근태관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_attend_info.html"> 근태현황</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_attend_myinfo.html"> 인사정보</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />설문조사
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_survey_open.html"> 진행중인 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_survey_close.html"> 마감된 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3.<a href="#"> 내가 만든 설문</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />자료실
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_file_upload.html"> 문서양식</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_file_upload.html"> 제품소개서</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />회사기본정보
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_company_info.html">회사기본정보</a></li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_company_info_register.html">회사기본정보
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right bg-white p10">
+                    <div class="page-main-wrap">
+                        <div class="page-member-top flex flex-justify">
+                            <div class="">
+                                <span class="btn-on">사원등록</span>
+                                <span class="btn-off">조직도등록</span>
+                            </div>
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3 class="tomato font18 noto m-t20">
+                                <i class="fas fa-feather-alt"></i>사원조직/연락처 > 2.사원등록
+                            </h3>
+                        </div>
+                        <div class="page-member-bottom">
+                            <div class="page-content">
+                                <form name="" method="POST">
+                                    <div class="member-info flex flex-justify">
+                                        <div class="member-left">
+                                            <div class="photo-area">
+                                                <img src="images/1.webp" alt=""/>
+                                            </div>
+                                            <div class="photo-btn center m-t5">
+                                                <button class="s-btn-on">수정</button>
+                                                <button class="s-btn-off">삭제</button>
+                                            </div>
+                                        </div>
+                                        <div class="member-right">
+                                            <table>
+                                                <tr>
+                                                    <td class="td-7 center under bg-gray weight700">사원명/성별</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-75" autofocus />
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">남자</option>
+                                                            <option value="">여자</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="td-7 center under bg-gray weight700">생년월일</td>
+                                                    <td class="td-13 p-lr3">
+                                                    <input type="text" name="" id="" class="input-75"  />
+                                                    <select name="" class="sel-55" id="">
+                                                        <option value="">양력</option>
+                                                        <option value="">음력</option>
+                                                    </select>
+                                                </td>
+                                                    <td  class="td-7 center under bg-gray weight700">C.P</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">010</option>
+                                                            <option value="">070</option>
+                                                        </select>
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">Tel</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">010</option>
+                                                            <option value="">070</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">내선번호</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">001</option>
+                                                            <option value="">002</option>
+                                                            <option value="">003</option>
+                                                        </select>
+                                                        <input type="text" name="" id="" class="input-75" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-7 center under bg-gray weight700">채용형태</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-135" id="">
+                                                            <option value="">공개채용</option>
+                                                            <option value="">수시채용</option>
+                                                            <option value="">특별채용</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="td-7 center under bg-gray weight700">희망직무</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">특이사항</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-65" placeholder="구분" />
+                                                        <input type="text" name="" id="" class="input-65" placeholder="사항"/>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">병역구분</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-135" id="">
+                                                            <option value="">병역필</option>
+                                                            <option value="">미필</option>
+                                                            <option value="">면제</option>
+                                                        </select>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">종교</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-135" id="">
+                                                            <option value="">종교유</option>
+                                                            <option value="">종교무</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-7 center under bg-gray weight700">취미</td>
+                                                    <td class="td-13 p-lr3"> 
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td class="td-7 center under bg-gray weight700">특기</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">장애여부</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-135" id="">
+                                                            <option value="">무</option>
+                                                            <option value="">유</option>
+                                                        </select>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">보훈대상여부</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-135" id="">
+                                                            <option value="">무</option>
+                                                            <option value="">유</option>
+                                                        </select>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">결혼여부</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <select name="" class="sel-135" id="">
+                                                            <option value="">유</option>
+                                                            <option value="">무</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-7 center under bg-gray weight700">보유자격1</td>
+                                                    <td class="td-13 p-lr3"></td>
+                                                    <td class="td-7 center under bg-gray weight700">보유자격2</td>
+                                                    <td class="td-13 p-lr3"></td>
+                                                    <td  class="td-7 center under bg-gray weight700">보유자격3</td>
+                                                    <td class="td-13 p-lr3"></td>
+                                                    <td  class="td-7 center under bg-gray weight700">보유자격4</td>
+                                                    <td class="td-13 p-lr3"></td>
+                                                    <td  class="td-7 center under bg-gray weight700">보유자격5</td>
+                                                    <td class="td-13 p-lr3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-7 center under bg-gray weight700">어학사항1</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">상</option>
+                                                            <option value="">중</option>
+                                                            <option value="">하</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="td-7 center under bg-gray weight700">어학사항2</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">상</option>
+                                                            <option value="">중</option>
+                                                            <option value="">하</option>
+                                                        </select>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">어학사항3</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">상</option>
+                                                            <option value="">중</option>
+                                                            <option value="">하</option>
+                                                        </select>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">어학사항4</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">상</option>
+                                                            <option value="">중</option>
+                                                            <option value="">하</option>
+                                                        </select>
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">어학사항5</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-75"  />
+                                                        <select name="" class="sel-55" id="">
+                                                            <option value="">상</option>
+                                                            <option value="">중</option>
+                                                            <option value="">하</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-7 center under bg-gray weight700">상벌사항1</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td class="td-7 center under bg-gray weight700">상벌사항2</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">상벌사항3</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">상벌사항4</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                    <td  class="td-7 center under bg-gray weight700">상벌사항5</td>
+                                                    <td class="td-13 p-lr3">
+                                                        <input type="text" name="" id="" class="input-135" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="comment">
+                                        <div class="title">
+                                            <h3 class="tomato font14 noto m-t20">
+                                                추가사항 입력
+                                            </h3>
+                                        </div>
+                                        <div class="content">
+                                            <textarea id="editor" name="" style=" border: 1px solid #cccccc;padding: 10px; border-radius: 2px;" class="noto">
+                                
+                                            </textarea>
+                                            <script>
+                                                CKEDITOR.replace('editor');
+                                                CKEDITOR.config.height=150;
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="btn-grp center m-t10">
+                                        <button type="submit" class="btn-normal">내용저장</button>
+                                        <button type="reset"  class="btn-red">새로고침</button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+
+</html>

@@ -1,0 +1,72 @@
+@charset 'utf-8';
+
+body{
+    /* 가로가운데(justify) 재치 */
+    display: flex;
+    justify-content: center;
+    /* 세로가운데 배치-height필수 */
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+ul {
+    display: flex;
+}
+
+ul li:nth-child(2){
+    /* 가운데를 기준으로 margin을 줘서 서로 띄우기 */
+    margin: 0 50px;
+}
+
+ul li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #777777;
+    cursor: pointer;
+    transition: .5s;
+
+    position: relative;
+}
+
+/* 원두개를 만들어서 합친거 */
+ul li:hover{
+    background-color: #86ff3b;
+    box-shadow: 0 0 0 4px black, 0 0 0 6px #86ff3b;
+
+}
+
+.content{
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 3px;
+    visibility: hidden; 
+    /* display:none;은 존재자체를 없애는 거, visibikity:hidden은 눈에서만 안보이게 하는것 */
+
+    position: absolute;
+    bottom: 60px;
+    left: -190px;
+}
+
+.content::after{
+    content:'';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    /* 기준점변경해줘야함, 안그러면 왼쪽모서리위를 기준으로 잡음 -기준점 ul li쪽으로*/
+
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+/* 가상 선택자: +, >, 띄어쓰기 */
+ul li:hover > .content{
+    /* 마우스 올리면 content가 보이게 */
+    visibility: visible;
+}

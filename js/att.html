@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html속성을 변경하는 attr 메소드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".btn").click(function(){
+                $("#siteUrl").html("네이버 사이트로 이동");
+
+                // $("a#siteUrl").attr("href","https://naver.com");
+                // $("a#siteUrl").attr("title","네이버로 이동");
+
+                $("a#siteUrl").attr({
+                    "href" : "https://naver.com",
+                    "title" : "네이버로 이동",
+                    "target" : "_self"
+                });
+
+            });
+        });
+
+        $(function(){
+            /*$(".btn2").click(function(){
+                $(".img").attr("src","images/ye.jpg");
+
+            });
+            $(".btn2").mouseout(function(){
+                $(".img").attr("src","images/pop.jpg");
+            }); */
+
+            // hover -> true, falus
+
+            $(".btn2").hover(function(){
+                $(".img").attr("src", "images/ye.jpg");
+                // hover해제되었을 때 
+            }, function(){
+                $(".img").attr("src", "images/pop.jpg");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <a href="https://www.daum.net" alt="" title="다음으로 이동" id="siteUrl">
+    다음 사이트로 이동
+    </a>
+    <button class="btn">사이트 변경</button>
+    <br/>
+    <br/>
+    <br/>
+    <img src="images/pop.jpg" class="img" style="width: 200px;"/>
+    <button class="btn2">이미지변경</button>
+
+</body>
+</html>

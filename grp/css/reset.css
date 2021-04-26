@@ -1,0 +1,38 @@
+@charset 'utf-8';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #333333;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+select, input, textarea, button{
+    border: none;
+    outline: 0;
+    /* 기본적으로 수평정렬이 안맞아서 */
+    vertical-align: top;
+}
+
+input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+}
+
+/* img{
+    display: block;
+} */
+

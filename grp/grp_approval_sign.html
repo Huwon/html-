@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+
+
+    <style>
+        tr:first-child {
+            background-color: #6f809a;
+        }
+
+        .tr-even {
+            /* 짝수일때 */
+            background-color: #eff3f9;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="noto center font18 ">
+                        <a href="grp_approval_main.html"> 전자결재 시스템</a></h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="auth">
+                            <span class="font16 weight700 noto">{접속자 - 접속권한 0등급}</span>
+                        </div>
+                        <div class="logout">
+                            <a href="grp_login.html" class="noto font16 weight700">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <img src="images/folder-closed.gif" />결재하기
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_ready.html"> 결재 대기 문서</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_approval_status.html">결재 문서
+                                            상태</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_approval_ref.html">참조/열람 대기
+                                            문서</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />문서함
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_send_save.html"> 발송
+                                            문서</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_approval_recieve_save.html">수신
+                                            문서</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_approval_ref_save.html">참조/열람 저장
+                                            문서</a></li>
+                                    <li><img src="images/folder.gif" />4. <a href="grp_approval_temp_save.html">임시 보관
+                                            문서</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />문서양식
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_hr_form.html"> 인사부 </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />결재 환경설정
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_sign.html"> 기본설정 </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right bg-white p10">
+                    <div class="page-main-wrap">
+                        <div class="page-member-top flex flex-justify">
+                            <div class="">
+
+                            </div>
+                            <div class="">
+
+                            </div>
+                        </div>
+                        <div class="title">
+
+                        </div>
+                        <div class="page-member-bottom">
+                            <div class="page-content">
+                                <div class="title">
+                                    <h3 class="tomato font18 noto">
+                                        <i class="fas fa-feather-alt"></i>결재환경설정 > 1.기본 설정
+                                    </h3>
+                                </div>
+                                <div class="sign-register m-t20">
+                                    <div class="flex">
+                                        <div class="" style="width: 150px;">
+                                            <!-- line-height는 한줄일때만 쓰기, 두줄이면 문제가 생김 -->
+                                            <span class="noto font14 weight700" style="line-height: 35px;">1.
+                                                서명관리</span>
+                                        </div>
+                                        <div class="" style="margin-left: 10px; margin-right: 20px; width: 400px;">
+                                            <input type="file" multiple style="width: 300px;" />
+                                            <button class="btn-off">저장</button>
+                                            <div class="" style="height: 100px; line-height: 100px;">
+                                                <img src="images/sign/stamp.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <span class="noto weight700 tomato font14" style="line-height: 35px;">
+                                                *서명은 최대 55px x 40px이며 사이즈가 크면 자동으로 비율이 조정됩니다.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="approval-env">
+                                    <div class="flex">
+                                        <div class="" style="width: 150px;">
+                                            <span class="noto font14 weight700" style="line-height: 35px;">2. 부재/위임설정
+                                            </span>
+                                        </div>
+                                        <div class="env-btn">
+                                            <a href="#">
+                                                <span class="font14 noto m-t5" style="background-color: #eeeeee; 
+                                            border: 1px solid #e7e7e7; padding: 3px 8px; 
+                                            display: inline-block;">
+                                                    <i class="fas fa-plus"></i>
+                                                    <span>추가</span>
+                                                </span>
+                                            </a>
+                                            <a href="#">
+                                                <span class="font14 noto m-t5" style="background-color: #eeeeee; 
+                                            border: 1px solid #e7e7e7; padding: 3px 8px; 
+                                            display: inline-block;">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                    <span>삭제</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table>
+                                    <tr class="center weight700 tr-color f6 font14 under  ">
+                                        <td class="td-5">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td class="td-10">부재/위임시작일</td>
+                                        <td class="td-10">부재/위임종료일</td>
+                                        <td class="td-10">부재/위임자</td>
+                                        <td >부재/위임사유</td>
+                                        <td class="td-10">사용여부</td>
+                                        
+
+                                    </tr>
+
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td >2020.09.17</td>
+                                        <td>2020.09.19</td>
+                                        <td>홍길동</td>
+                                        <td>업무출장</td>
+                                        <td>사용중</td>
+
+                                    </tr>
+                                </table>
+                                <div class="page-grp center m-t10">
+                                    <span class="page "><a href=""><i class="fas fa-angle-double-left"></i></a></span>
+                                    <span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
+                                    <span class="page page-active"><a href="" class="f6">1</a></span>
+                                    <span class="page"><a href="">2</a></span>
+                                    <span class="page"><a href="">3</a></span>
+                                    <span class="page"><a href="">4</a></span>
+                                    <span class="page"><a href="">5</a></span>
+                                    <span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
+                                    <span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+<script>
+    $(function () {
+        $("tr:nth-child(2n+1)").addClass("tr-even");
+    });
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate 속성 변경</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".btn").click(function(){
+                $(".box").animate({
+                     // +=증감연산자
+                    // width:'+=100px',
+                    // height:'+=50px',
+                    // left: '+=50px',
+                    // top:'100px',
+                    // 불투명도 : opacity: '0.1'
+
+                    // width: 'toggle'
+                    height:'toggle'
+                }, 100);
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="btn">start</button>
+    <p>버튼을 눌러 사각형을 속성을 조정합니다.</p>
+    <div class="box"></div>
+</body>
+</html>

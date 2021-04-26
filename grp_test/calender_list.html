@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM>일정 목록</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+    <link rel="stylesheet" href="calendar/core/main.css">
+    <link rel="stylesheet" href="calendar/daygrid/main.css">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+
+
+    <style>
+        /* 사진 */
+
+
+        h2 {
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .logo a {
+            color: black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="admin-page">
+
+        <div class="logo">
+            <h1><a href="main.html">HELLO COMPANY</a></h1>
+            <h3>administrator page</h3>
+        </div>
+        <div class="menu">
+
+            <h4>NAVIGATION</h4>
+            <div class="tree-wrap">
+                <div id="sidetreecontrol" class="ctr">
+                    <a href="#" class="tab active" id="open">전체닫기</a>
+                    <a href="#" class="tab" id="close">전체열기</a>
+                </div>
+                <div class="clearfix"></div>
+                <ul id="tree">
+                    <li>
+                        <a href="admin.html">시스템공지사항</a>
+
+                    </li>
+                    
+                    <li>
+                        <a href="member_chart.html">조직도</a>
+
+                    </li>
+                    <li>
+                        직원관리
+                        <ul>
+                            <li>1.<a href="member_list.html"> 직원목록</a></li>
+                            <li>2. <a href="member_register.html">직원등록</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        홍보
+                        <ul>
+                            <li>1.<a href="marketing_outside.html"> 대외홍보사항</a></li>
+                            <li>2. <a href="marketing_inside.html">대내홍보사항</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        커뮤니티
+                        <ul>
+                            <li>1.<a href="community.html"> 공지사항
+                                </a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        전자결재
+                        <ul>
+                            <li>1.<a href="approval_main.html" target="_blank"> 전자결재
+                                    목록</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        문서관리
+                        <ul>
+                            <li>1.<a href="report_inside.html">사내문서</a>
+                            </li>
+                            <li>1.<a href="report_outside.html">대외문서</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        일정관리
+                        <ul>
+                            <li>1.<a href="calender_list.html"> 일정 목록</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        근태관리
+                        <ul>
+                            <li>1.<a href="attend_chk.html"> 근태현황</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
+                    <li>
+                        자료실
+                        <ul>
+                            <li>1.<a href="file.html">사내문서양식 </a>
+                            </li>
+                            <li>2.<a href="file_outside.html"> 대외문서양식</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../grp_test/login.html">로그아웃</a>
+                        
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main m-b20">
+            <div class="main-middle bg-white">
+                <div class="main-top ">
+                    <h2 class=" p-lr10 p-tb20">직원관리 > 2.직원등록</h2>
+                </div>
+                <div class="system-main">
+
+                    <div class="calender-insert">
+                        <form>
+                            <table>
+                                <tr>
+                                    <td class="noto td-10 under bg-sub weight700 center">시작일자</td>
+                                    <td class="p-lr3">
+                                        <input type="text" autocomplete="off" id="startDate" class="input-150" />
+                                        <i class="fas fa-calendar-alt font16"></i>
+                                    </td>
+                                    <td class="noto td-10 under bg-sub weight700 center">종료일자</td>
+                                    <td class="p-lr3">
+                                        <input type="text" autocomplete="off" id="endDate" class="input-150" />
+                                        <i class="fas fa-calendar-alt font16"></i>
+                                    </td>
+                                    <td class="noto td-10 under bg-sub weight700 center">일정내용</td>
+                                    <td class="p-lr3">
+                                        <input type="text" autocomplete="off" class="input-100" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="btn-grp center m-t10">
+                                <button type="submit" class="btn-on">일정등록</button>
+                                <button type="reset" class="btn-off">등록취소</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="title">
+                        <h3 class="tomato font18 noto m-t20">
+                            <i class="fas fa-feather-alt"></i>일정관리 > 2.일정목록
+                        </h3>
+                    </div>
+                    <div class="page-member-bottom">
+                        <div class="page-content">
+                            <div id="calendar" class="calendar"></div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+              
+            
+
+            </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+
+<script>
+    $(function () {
+        $("tr:nth-child(2n+1)").addClass("tr-even");
+    });
+</script>
+
+<script src="calendar/core/main.js"></script>
+<script src="calendar/core/locales/ko.js"></script>
+<script src="calendar/interaction/main.js"></script>
+<script src="calendar/daygrid/main.js"></script>
+
+<!-- calender customizing js -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['interaction', 'dayGrid'],
+            header: {
+                left: 'prevYear,prev,next,nextYear today',
+                center: 'title',
+                right: 'dayGridMonth,dayGridWeek,dayGridDay'
+            },
+            navLinks: true,
+            editable: true,
+            eventLimit: true,
+            locales: "ko",
+            events: [{
+                title: '포트폴리오 제출',
+                start: '2020-09-16',
+                end: '2020-09-18'
+            },
+            {
+                title: 'UI구현 능력단위',
+                start: '2020-09-22',
+                end: '2020-09-30',
+                color: '#257e4a'
+            }
+            ]
+        });
+
+        calendar.render();
+    });
+</script>
+
+<!--calender event -->
+<script>
+    $(function () {
+        $("#startDate, #endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>
+
+</html>

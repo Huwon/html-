@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Website</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/fullpage.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/fullpage.js"></script>
+
+    <style>
+        .bg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav{
+            /* 위치 고정-스크롤내려도 그대로 있음 */
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            /* position때문에 넓이를 다시 줘야함 */
+            width: 100%;
+            height: 110px;
+            color: white;
+            line-height: 110px;
+            padding: 0 50px;
+        }
+
+        .nav a{
+            color: white;
+        }
+        .firstPage-content{
+            text-align: center; 
+            /*애니매이션 기능 - 불투명도=숨기기 */
+            opacity: 0;
+            animation: run 1s 0.5s forwards;
+            margin-top: 300px;
+        }
+
+        @keyframes run {
+            100%{
+                opacity: 1;
+                margin: 0;
+            }
+        }
+
+        .firstPage-content h3{
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .firstPage-content h2{
+            font-size: 60px;
+            text-shadow: 2px 2px 2px #000000;
+            
+        }
+
+        .firstPage-wrap{
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="flex flex-justify">
+            <div class="logo">
+                <h1 class="roboto" style="font-size: 35px;">
+                    <a href="main.html"> Company System</a> </h1>
+            </div>
+            <div class="navbar">
+                <ul id="menu" class="flex flex-justify">
+                    <li class="noto weight700 font20" style="margin: 0 30px;" data-menuanchor="1stPage"><a href="#1stPage">회사소개</a></li>
+                    <li class="noto weight700 font20" style="margin: 0 30px;"data-menuanchor="2stPage"><a href="#2stPage">고객센터</a></li>
+                    <li class="noto weight700 font20" style="margin: 0 30px;"data-menuanchor="3stPage"><a href="#3stPage">포트폴리오</a></li>
+                    <li class="noto weight700 font20" style="margin: 0 30px;"data-menuanchor="4stPage"><a href="#4stPage">서비스</a></li>
+                    <li class="noto weight700 font20" style="margin: 0 30px;"data-menuanchor="5stPage"><a href="#5stPage">제품소개</a></li>
+                </ul>
+            </div>
+            <div class="login">
+                <a href="grp_login.html" target="_blank" class="noto font16"> 그룹웨어 로그인</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="fullpage">
+        <div class="section bg" style="background-image: url(images/main/1.jpg);">
+            <div class="firstPage-wrap">
+                <div class="firstPage-content">
+                    <h3 class="noto f6">새로운 플랫폼을 제시합니다.</h3>
+                    <h2 class="roboto f6">TOTAL INFRASTRUCTURE PLATFORM</h2>
+                </div>
+            </div>
+        </div>
+        <div class="section bg" style="background-image: url(images/main/2.jpg);">
+            <h1>1</h1>
+        </div>
+        <div class="section bg" style="background-image: url(images/main/3.jpg);">
+            <h1>1</h1>
+        </div>
+        <div class="section bg" style="background-image: url(images/main/4.jpg);">
+            <h1>1</h1>
+        </div>
+        <div class="section bg" style="background-image: url(images/main/5.jpg);">
+            <h1>1</h1>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        $("#fullpage").fullpage({
+            navigation: true,
+            easingcss3: 'cubic-bezier(0.175, 0.585, 0.820, 1.275)',
+            menu: '#menu',
+            anchors: ['1stPage', '2stPage', '3stPage', '4stPage', '5stPage'],
+            scrollingSpeed: 300
+        });
+    });
+</script>
+
+</html>

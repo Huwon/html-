@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideDown() & stop()</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .flip, .panel{
+            border: 1px solid #cccccc;
+            padding: 10px;
+        }
+
+        .panel{
+            padding: 50px;
+            display: none;
+            background-color: rosybrown;
+        }
+    </style>
+
+<script>
+    $(function(){
+        $(".flip").click(function(){
+            $(".panel").slideDown(1000);
+        });
+
+        $(".btn").click(function(){
+            $(".panel").stop();
+        });
+    });
+</script>
+
+</head>
+<body>
+    <button class="btn">slideDown & stop </button>
+    <div class="flip">여기를 클릭하면 slide down이 실행됩니다.</div>
+    <div class="panel">greenart academy</div>
+</body>
+</html>

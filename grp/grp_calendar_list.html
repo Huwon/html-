@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+    <link rel="stylesheet" href="calendar/core/main.css">
+    <link rel="stylesheet" href="calendar/daygrid/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.treeview.js"></script>
+
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="noto center font18 "> 관리자페이지</h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="auth">
+                            <span class="font16 weight700 noto">{접속자 - 접속권한 0등급}</span>
+                        </div>
+                        <div class="logout">
+                            <a href="grp_login.html" class="noto font16 weight700">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <img src="images/folder-closed.gif" />사내조직/연락처
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_member_list.html"> 사원목록</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_member_register.html">사원등록</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_member_chart.html">조직도</a></li>
+                                    <li><img src="images/folder.gif" />4. <a href="grp_member_char_register.html">조직도
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />전자결재
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_main.html"
+                                            target="_blank"> 전자결재
+                                            목록</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />게시판관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_board_create.html"> 게시판 생성</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />일정관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_calender_list.html"> 일정 목록</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />근태관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_attend_info.html"> 근태현황</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_attend_myinfo.html"> 인사정보</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />설문조사
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_survey_open.html"> 진행중인 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_survey_close.html"> 마감된 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3.<a href="#"> 내가 만든 설문</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />자료실
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_file_upload.html"> 문서양식</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_file_upload.html"> 제품소개서</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />회사기본정보
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_company_info.html">회사기본정보</a></li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_company_info_register.html">회사기본정보
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right bg-white p10">
+                    <div class="page-main-wrap">
+                        <div class="page-member-top flex flex-justify">
+                            <div class="">
+
+                            </div>
+                            <div class="">
+
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3 class="tomato font18 noto m-t20">
+                                <i class="fas fa-feather-alt"></i>일정관리 > 1.일정등록
+                            </h3>
+                        </div>
+                        <div class="calender-insert">
+                            <form>
+                                <table>
+                                    <tr>
+                                        <td class="noto td-10 under bg-gray weight700 center">시작일자</td>
+                                        <td class="p-lr3">
+                                            <input type="text" autocomplete="off" id="startDate" class="input-150" />
+                                            <i class="fas fa-calendar-alt font16"></i>
+                                        </td>
+                                        <td class="noto td-10 under bg-gray weight700 center">종료일자</td>
+                                        <td class="p-lr3">
+                                            <input type="text" autocomplete="off" id="endDate" class="input-150" />
+                                            <i class="fas fa-calendar-alt font16"></i>
+                                        </td>
+                                        <td class="noto td-10 under bg-gray weight700 center">일정내용</td>
+                                        <td class="p-lr3">
+                                            <input type="text" autocomplete="off" class="input-100" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="btn-grp center m-t10">
+                                    <button type="submit" class="btn-on">일정등록</button>
+                                    <button type="reset" class="btn-off">등록취소</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="title">
+                            <h3 class="tomato font18 noto m-t20">
+                                <i class="fas fa-feather-alt"></i>일정관리 > 2.일정목록
+                            </h3>
+                        </div>
+                        <div class="page-member-bottom">
+                            <div class="page-content">
+                                <div id="calendar" class="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+<script>
+    $(function () {
+        $("tr:nth-child(2n+1)").addClass("tr-even");
+    });
+</script>
+
+<script src="calendar/core/main.js"></script>
+<script src="calendar/core/locales/ko.js"></script>
+<script src="calendar/interaction/main.js"></script>
+<script src="calendar/daygrid/main.js"></script>
+
+<!-- calender customizing js -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['interaction', 'dayGrid'],
+            header: {
+                left: 'prevYear,prev,next,nextYear today',
+                center: 'title',
+                right: 'dayGridMonth,dayGridWeek,dayGridDay'
+            },
+            navLinks: true,
+            editable: true,
+            eventLimit: true,
+            locales: "ko",
+            events: [{
+                title: '포트폴리오 제출',
+                start: '2020-09-16',
+                end: '2020-09-18'
+            },
+            {
+                title: 'UI구현 능력단위',
+                start: '2020-09-22',
+                end: '2020-09-30',
+                color: '#257e4a'
+            }
+            ]
+        });
+
+        calendar.render();
+    });
+</script>
+
+<!--calender event -->
+<script>
+    $(function () {
+        $("#startDate, #endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>
+
+</html>

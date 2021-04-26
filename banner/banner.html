@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너이미지 만들기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        /* .btn-grp{
+            text-align: center;
+        } */
+
+        .prev{
+            background-color: red;
+            border: 0;
+            outline: 0;
+            color: white;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+
+        .next{
+            background-color:blue;
+            border: 0;
+            outline: 0;
+            color: white;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+
+        .banner{
+            width: 4000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        .banner img{
+            /* img는 inline타입이라 block타입으로 바꿔줌 */
+            display: block;
+            width: 800px;
+            height: 600px;
+            float: left;
+        }
+
+        .banner-wrap{
+            /* 한장만 보이게 하고 다 숨기기 */
+            width: 800px;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="banner-wrap">
+        <div class="banner">
+            <img src="images/1.jpg"/>
+            <img src="images/2.jpg"/>
+            <img src="images/3.jpg"/>
+            <img src="images/4.jpg"/>
+            <img src="images/5.jpg"/>
+        </div>
+    </div>
+        <div class="btn-grp">
+            <button id="prev" class="prev">이전</button>
+            <button id="next" class="next">이후</button>
+        </div>
+    
+</body>
+<script>
+    $(function(){
+        var imgCount = $(".banner").find("img").length;
+        // alert(imgCount);
+
+        //배열번호가 0번부터 시작
+        var currentIndex = 0;
+
+        var imgWidth = $(".banner-wrap").width();
+        //alert(imgWidth); //모니터 해상도 구할때 씀.
+
+        function showImg(index){
+            //별도의 메소드를 만들어 밑에서 사용
+            //이미지 찾아가기
+            var left = - (index * imgWidth);
+            $(".banner").css("left", left); 
+        }
+
+        $("#prev").click(function(){
+            currentIndex--;
+            if(currentIndex < 0){
+                currentIndex = imgCount - 1;
+            }
+            showImg(currentIndex);
+        });
+
+        $("#next").click(function(){
+            currentIndex++;
+            if(currentIndex >= imgCount){
+                currentIndex = 0;
+            }
+            showImg(currentIndex);
+        });
+    });
+</script>
+</html>

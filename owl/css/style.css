@@ -1,0 +1,106 @@
+@charset 'utf-8';
+
+main{/*배경*/
+    background-color: #f7f7f7;
+    padding: 50px 0;
+}
+
+.new-wrap{
+    /* 해상도 설정 */
+    /*background-color: aquamarine; 구역확인용으로 색 넣어보기*/
+    width: 1400px;
+    margin: 0px auto; /*화면 가운데로 오게- 위아래, 좌우*/
+
+}
+
+.new-title{
+ 
+}
+
+.new-title h2{ /*new-title  밑에 h2가 있음, >h2 해도 됨*/
+    font-size: 45px;
+     /* 글자라서 margin말고 text-aline으로 가운데 오기 */
+    text-align: center;
+}
+.item{
+    /*border: 1px solid #eeeeee;*/
+    border-right: 2px aolid #eeeeee;
+    border-bottom: 2px solid #eeeeee;
+}
+.item:hover{
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.item:hover .item-icons {
+    display: inline-block;
+}
+.item-image{ /* 배경이미지로 넣기 */
+    background-repeat: no-repeat;  /*여백남으면 반복안하게*/
+    background-size: cover; /*사진을 설정한 div에 맞추게 하기*/
+    background-position: center;
+    width: 100%; /*사진들 크게 맞게 알아서 화면 채우기*/
+    height: 500px;
+}
+.item-icons{
+    /* 화면 정가운데로 가기-item-info란 까지 포함한거라 calc통해서 대략 px을 뺴줘야 함 */
+    position: absolute;
+    top: calc(50% - 30px); /* - 띄어쓰기 꼭!*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 마우스 올렸을때만 보이게 하기 위해서 none 처리 */
+    display: none;
+}
+
+.cart{ /*아이콘들에 공통적으로 적용할 내용이라 별도의 class생성*/
+    width: 45px;
+    height: 45px;
+    /* bag하나면 inline, 옆에 다른것도 있을거라 inline-block  */
+    display: inline-block;
+    border-radius: 50%;
+   text-align: center;
+   font-size: 22px;
+}
+.cart:nth-child(2){ /*가운데 아이콘을 중심으로 서로 띄워주기*/
+    margin: 0 6px;
+}
+.bag{
+    background-color: black;
+    padding: 6px 0; /*세로정렬 : padding, line-height*/
+}
+
+.bag a{
+    color: white;
+}
+
+.heart{
+    background-color:white;
+    padding: 6px 0; /*세로정렬 : padding, line-height*/
+}
+
+.heart a{
+    color:black;
+}
+
+.visa{
+    background-color:tomato;
+    padding: 6px 0; /*세로정렬 : padding, line-height*/
+}
+
+.visa a{
+    color:white;
+}
+
+.item-info{
+    /* 줄에서 띄우기 */
+    padding: 10px;
+    line-height: 1.2;
+    background-color: white;
+}
+.price{
+    margin-top: 10px;
+}
+.before del{
+    font-size: 12px;
+    color: #cccccc;
+}

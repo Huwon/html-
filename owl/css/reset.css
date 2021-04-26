@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Catamaran', sans-serif;
+}
+
+a{
+    /* 밑줄 안나오게 하기 */
+    text-decoration: none;
+}

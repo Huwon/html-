@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+   
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="logo-wrap">
+        <h1 class="roboto">GREEN ARCADEMY</h1>
+        <h2 class="roboto">Enterprise Groupware System</h2>
+    </div>
+    <div class="login-wrap">
+        <div class="login-box">
+            <!-- 로그인 되면 action에 설정된 파일로 이동/autocomplete:자동완성기능(이전에 입력한게 그대로 뜸) -->
+            <form method="POST" action="grp_main.html" autocomplete="off">
+                <input type="text" name="userid" id="userid" placeholder="직원번호를 입력하세요." required autofocus/>
+                <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요." required/>
+                <div class="">
+                    <button type="submit" class="btn roboto">LOGIN</button>
+                </div>
+                <div class="register-wrap">
+                    <a href="grp_register.html" class="">직원가입</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

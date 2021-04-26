@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>
+                <a href="./"> ADMINSTRATOR</a></h2>
+            <span class="bar">
+                <a href="#"> <i class="fas fa-bars"></i></a>
+            </span>
+        </div>
+        <div class="submenu">
+            내용 및 디자인
+        </div>
+        <div class="auth">
+            <div class="info">
+                <div class="search-wrp">
+                    <form>
+                        <span class="zoom">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" class="search" />
+                    </form>
+                </div>
+                <div class="bell-wrp">
+                    <span class="bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="msg">5</span>
+                    </span>
+                </div>
+                <div class="pic">
+                    <span class="user">
+                        <img src="images/icon.png" alt="" title=""/>
+                    </span>
+                </div>
+            </div>
+        <div class="clearfix"></div>
+    </header>
+    <main>
+        <div class="menu">
+            <h4>NAVIGATION</h4>
+            <ul>
+                <li>
+                   <span class="icon"><i class="fas fa-user-alt"></i></span>
+                    <a href="">MEMBERS</a>
+                </li>
+                <li><a href="">ARTICLE</a></li>
+                <li><a href="">CALENDER</a></li>
+                <li><a href="">MAILING</a></li>
+                <li><a href="">ITEMLIST</a></li>
+                <li><a href="">SITEINFO</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="main-top">
+                <span class="welcome"> WELCOME JOHN</span>
+                <span class="sitemap"> Codefox > dashboard</span>
+                <div class="clearfix"></div>
+
+            </div>
+            <div class="main-panel">
+                <div class="member"> 1</div>
+                <div class="article">2</div>
+                <div class="download">3</div>
+                <div class="request">4</div>
+            </div>
+
+            <div class="main-content">
+                <div class="chart">원형그래프</div>
+                <div class="chart">선형그래프</div>
+                <div class="chart">막대그래프</div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+    </main>
+</body>
+
+    <script>
+        $(function(){
+            $(".bar a").click(function(e){
+                // slideToggle : 기본속도 1초, 또는 ("fast/slow")도 사용가능 
+                $(".submenu").slideToggle(100);
+                // e는 event, a태그 초기화(정지)
+                e.preventDefault();
+            });
+        });
+    </script>
+
+</html>

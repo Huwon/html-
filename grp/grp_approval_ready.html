@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/zTreeStyle.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+    <script src="js/jquery.ztree.core.js"></script>
+
+
+    <style>
+        tr:first-child {
+            background-color: #6f809a;
+        }
+
+        .tr-even {
+            /* 짝수일때 */
+            background-color: #eff3f9;
+        }
+
+        .emerge{
+            padding: 4px 8px;
+            background-color: #d92550;
+            color: white;
+        }
+/* modal css */
+        .modal-wrapper{
+            background-color: rgba(0,0,0,0.3);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            opacity: 0;
+           
+        }
+        .modal-wrapper.open{
+            visibility: visible;
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        /* .modal 앞에 띄어쓰기 */
+        .modal-wrapper.open .modal{  
+            opacity: 1;
+           
+        }
+
+        .modal{
+            width: 1500px;
+            height: 800px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            opacity: 0;
+            border-radius: 5px;
+            padding: 20px;
+
+            box-shadow: -60px 0px 100px -90px #000000,
+            60px 0px 100px -90px #000000;
+        }
+
+
+    </style>
+
+    <script>
+        $(function(){
+            $(".popup").click(function(){
+                $(".modal-wrapper").toggleClass("open");
+            });
+        });
+    </script>
+
+<SCRIPT type="text/javascript">
+    
+    var aTree;
+    var formIframe;
+
+    var setting = {
+        view: {
+            dblClickExpand: false,
+            showLine: true,
+            selectedMulti: false
+        },
+
+        data: {
+            simpleData: {
+                enable: true,
+                idKey: "id",
+                pIdKey: "pId",
+                rootPId: ""
+            }
+        },
+        callback: {
+            beforeClick: function (treeId, treeNode) {
+                var zTree = $.fn.zTree.getZTreeObj("tree");
+                if (treeNode.isParent) {
+                    zTree.expandNode(treeNode);
+                    return false;
+                } else {
+                    formIframe.attr("src", treeNode.file + ".html");
+                    return true;
+                }
+            }
+        }
+    };
+
+    var zNodes = [{
+            id: 1,
+            pId: 0,
+            name: "[인사부 문서양식]",
+            open: false
+        },
+        {
+            id: 101,
+            pId: 1,
+            name: "업무기안",
+            file: "html/sample"
+        },
+
+
+        {
+            id: 2,
+            pId: 0,
+            name: "[자재부 문서양식]",
+            open: false
+        },
+        {
+            id: 201,
+            pId: 2,
+            name: "자재관리대장",
+            file: "html/ sample1"
+        },
+
+        {
+            id: 3,
+            pId: 0,
+            name: "[회계부 문서양식]",
+            open: false
+        },
+        {
+            id: 301,
+            pId: 3,
+            name: "월간 회계 장부",
+            file: "html/manager"
+        }
+
+
+    ];
+
+    $(document).ready(function () {
+        var t = $("#ztree");
+        t = $.fn.zTree.init(t, setting, zNodes);
+        formIframe = $("#formIframe");
+        formIframe.bind("load", loadReady);
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        zTree.selectNode(zTree.getNodeByParam("id", 101));
+
+    });
+
+    function loadReady() {
+        var bodyH = formIframe.contents().find("body").get(0).scrollHeight,
+            htmlH = formIframe.contents().find("html").get(0).scrollHeight,
+            maxH = Math.max(bodyH, htmlH),
+            minH = Math.min(bodyH, htmlH),
+            h = formIframe.height() >= maxH ? minH : maxH;
+        if (h < 760) h = 760;
+        formIframe.height(h);
+    }
+
+    
+</SCRIPT>
+
+</head>
+
+<body>
+    <!-- modal layer -->
+
+    <div class="modal-wrapper">  <!--바깥은 화면 전체 크기-->
+
+        <div class="modal">  <!--실제 모달 크기-->
+            <div class="modal-title flex flex-justify">
+                <h2 class="noto font16 m-b10">결재 양식 선택</h2>
+                <h2 class="noto font16 m-b10">결재 라인 선택</h2>
+            </div>
+            <div class="modal-top  flex flex-justify">
+                <div class="" style="width: 300px; border: 1px solid #e7e7e7;">
+                    <div class="from-list">
+                        <ul id="ztree" class="ztree"></ul>
+                    </div>
+                </div>
+                <div class="" style="width: 900px; border: 1px solid #e7e7e7; padding: 20px; margin: 0 10px;">
+                    <iframe width="100%"  height="600px" id="fromIframe" 
+                    frameborder="0"
+                    name="formIframe" src="html/sample.html" scrolling="auto" ></iframe>
+                </div>
+                <div class="p10" style="width: 300px; border: 1px solid #e7e7e7;">결재 라인</div>
+            </div>
+            <div class="modal-bottom center m-t10">
+                <button class="btn-on">문서선택</button>
+                <button class="btn-off popup btn-close">선택취소</button>
+            </div>
+        </div>
+    </div>  
+
+    <!-- //modal layer -->
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="noto center font18 "> 
+                        <a href="grp_approval_main.html"> 전자결재 시스템</a></h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="auth">
+                            <span class="font16 weight700 noto">{접속자 - 접속권한 0등급}</span>
+                        </div>
+                        <div class="logout">
+                            <a href="grp_login.html" class="noto font16 weight700">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <img src="images/folder-closed.gif" />결재하기
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_ready.html"> 결재 대기 문서</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_approval_status.html">결재 문서 상태</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_approval_ref.html">참조/열람 대기 문서</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />문서함
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_send_save.html"> 발송 문서</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_approval_recieve_save.html">수신 문서</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_approval_ref_save.html">참조/열람 저장 문서</a></li>
+                                    <li><img src="images/folder.gif" />4. <a href="grp_approval_temp_save.html">임시 보관 문서</a></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />문서양식
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_hr_form.html"> 인사부 </a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />결재 환경설정
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_sign.html"> 기본설정 </a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right bg-white p10">
+                    <div class="page-main-wrap">
+                        
+                        <div class="title">
+                           
+                        </div>
+                        <div class="page-member-bottom">
+                            <div class="page-content">
+                                <div class="title">
+                                    <h3 class="tomato font18 noto">
+                                        <i class="fas fa-feather-alt"></i>결재하기 > 1.결재 대기 문서
+                                    </h3>
+                                </div>
+                                <div class="page-member-top flex flex-justify m-t20">
+                                    <div class="">
+                                        <button class="btn-red">일괄결재하기</button>
+                                        <button class="btn-normal popup">결재문서만들기</button>
+                                    </div>
+                                    <div class="">
+                                        <form method="post" action="">
+                                            <select class="" name="searchOpt">
+                                                <option value="">부서명</option>
+                                                <option value="">이름</option>
+                                            </select>
+                                            <input type="text" name="words" required style="margin-left:-2px" />
+                                            <button type="submit" class="btn-on" style="margin-left:-2px">직원검색</button>
+        
+                                        </form>
+                                    </div>
+                                </div>
+                                <table class="m-t5">
+                                    <tr class="center weight700 tr-color f6 font14 under  ">
+                                        <td class="td-5">
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td class="td-5">기안일</td>
+                                        <td class="td-10">결재양식</td>
+                                        <td class="td-10">긴급/일반</td>
+                                        <td >문서 제목</td>
+                                        <td class="td-10">첨부파일</td>
+                                        <td class="td-10">기안자</td>
+                                    
+                                    </tr>
+                                   
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class=""> 일반</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class=""> 일반</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class="emerge"> 긴급</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    <tr class="center font14">
+                                        <td>
+                                            <input type="checkbox"/>
+                                        </td>
+                                        <td>2020-09-16</td>
+                                        <td>인사부 > 업무일지</td>
+                                        <td ><span class=""> 일반</span></td>
+                                        <td>일일 업무일지 기안입니다.</td>
+                                        <td>-</td>
+                                        <td>인사부 > 홍길동</td>
+                                        
+                                    </tr>
+                                    </table>
+                                    <div class="page-grp center m-t10">
+                                        <span class="page "><a href=""><i class="fas fa-angle-double-left"></i></a></span>
+                                        <span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
+                                        <span class="page page-active"><a href="" class="f6">1</a></span>
+                                        <span class="page"><a href="">2</a></span>
+                                        <span class="page"><a href="">3</a></span>
+                                        <span class="page"><a href="">4</a></span>
+                                        <span class="page"><a href="">5</a></span>
+                                        <span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
+                                        <span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+<script>
+    $(function () {
+        $("tr:nth-child(2n+1)").addClass("tr-even");
+    });
+</script>
+</html>

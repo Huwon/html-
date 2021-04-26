@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body{
+
+        }
+
+        .userid{
+            border: 0;
+            outline: 0;
+            border: 1px solid #cccccc;
+            height: 30px;
+            width: 200px;
+            padding: 0 8px;
+        }
+
+        .btn{
+            border: 0;
+            outline: 0;
+            background-color: #e7e7e7;
+            font-size: 14px;
+            height: 32px;
+            vertical-align: bottom;
+            border: 1px solid #cccccc;
+            cursor: pointer;
+        }
+
+        .idcheck{
+            color: red;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 700;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $(".btn").click(function(){
+                if($("#userid").val() == ""){
+                    alert("아이디를 입력하세요");
+                    $("#userid").focus();
+                    return false;
+                }else{
+                    var str = $("#userid").val();
+                    // $("p").text("사용할 수 있는 아이디입니다.");
+                    $("p").html(str + "사용할 수 있는 아이디입니다.");
+// val() : 값 가져오기
+// val("") : input내용을 비우기
+// val("글자") : 안에 넣은 글자로 변경
+                    // $(".btn").val("검색완료");
+                    // 버튼실행하고 못쓰게 하기-input에도 disabled 넣어도 됨
+                    $(".btn").attr("disabled", true);
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    
+        <div class="">
+        <input type="text" id="userid" class="userid" autofocus/>
+        <input type="submit" class="btn" value="아이디검색"/>
+         
+    </div>
+    <p class="idcheck"></p>
+    
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수평선 긋기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        header {
+            /*div와 비슷*/
+            width: 100%;
+            /*화면 가득채워보이기vw*/
+            height: 100vh;
+            /*화면 가득채워보이기*/
+            background-image: url(images/ab.jpg);
+        }
+
+        footer {
+            width: 100%;
+
+            background-color: rgba(0, 0, 0, 0.9);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        section {
+            width: 100%;
+            padding: 150px 0;
+        }
+
+        section:nth-child(2n) {
+            background-color: #eeeeee;
+        }
+
+        .top {
+            width: 1200px;
+            padding: 40px 0;
+            margin: 0 auto;
+
+            position: relative;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .MENU {
+            float: right;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .MENU>a {
+            margin-left: 40px;
+        }
+
+        a.active {
+            font-weight: 700;
+        }
+
+        .bg-content {
+            position: absolute;
+            top: calc(50% - 50px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+
+        }
+
+        .bg-content>h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 75px;
+            color: white;
+            letter-spacing: 2px;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .dot {
+            color: #ffde00;
+
+        }
+
+        .bg-content>p {
+            color: rgba(255, 255, 255, 0.5);
+            /*(글자 색+글자 투명도-0.5~0.8추천)*/
+            text-align: center;
+            /*글자 정렬, div는 글자가 아니라 정렬안됨*/
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+        }
+
+        .btn1 {
+            border: 1px solid white;
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn1:hover {
+            border: 2px solid #ffde00;
+            background-color: transparent;
+            color: #ffde00;
+            transition: 0.5s;
+        }
+
+        .btn2 {
+            background-color: #ffde00;
+            border: 2px solid transparent;
+            color: white;
+
+        }
+
+        .btn2:hover {
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .btn-gr {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .title,
+        .two-title>h2 {
+            width: 1200px;
+            text-align: center;
+            margin: 0 auto;
+
+
+        }
+
+        .items {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            /*여백 알아서 띄워주기between, around*/
+
+
+        }
+
+        .item {
+            background-color: #cccccc;
+            width: 280px;
+
+
+        }
+
+        .item>img {
+            transition: 0.8s;
+        }
+
+        .item>img:hover {
+             transform: scale(1.2); 
+            /* transform: rotate(50deg); 
+            transition: 0.8s;*/
+            cursor: pointer;
+        }
+
+        .item>img {
+            width: 280px;
+            height: 350px;
+        }
+
+        .title>h2,
+        .two-title>h2 {
+            font-size: 50px;
+            font-family: 'Poppins', sans-serif;
+
+            text-transform: capitalize;
+        }
+
+        .title>p,
+        .two-title>p {
+            margin-bottom: 50px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .two-items {
+            width: 1200px;
+            margin: 0 auto;
+            /*div라 margin으로*/
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .two-item {
+            width: 380px;
+
+
+
+        }
+
+        .two-item img {
+            /* > 바로 밑에라는 뜻*/
+            width: 100%;
+            height: 500px;
+            transition: 0.8s;
+
+        }
+
+        .two-items img:hover {
+             transform: scale(1.3);
+            transition: 0.8s; 
+            cursor: pointer;
+        }
+
+        .img-hidden {
+            overflow: hidden;
+            /*넘치는 부분은 넘치치 않게*/
+
+        }
+
+        .item-content {
+            background-color: white;
+            padding: 20px;
+            height: 250px;
+        }
+
+        .tag {
+            color: #ffffff;
+            font-size: 12px;
+            width: 40px;
+            height: 25px;
+            line-height: 25px;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            /*inline에는 적용 안됨*/
+            border-radius: 2px;
+        }
+
+        .new {
+            background-color: yellow;
+            color: red;
+
+
+        }
+
+        .hit {
+            background-color: yellow;
+            color: yellowgreen;
+
+        }
+
+        .item-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .item-content p {
+            margin-bottom: 10px;
+            line-height: 1.3;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .footer-menu {
+            width: 100;
+            padding: 100px 0;
+
+        }
+
+        .footer-copy {
+            text-align: center;
+            width: 100%;
+            background-color: black;
+            padding: 20px 0;
+
+        }
+
+        .footer-copy span {
+            color: white;
+
+        }
+
+        @media (max-width: 600px) {
+
+            /*모바일화면*/
+            .top {
+                width: 100%;
+                /*작은 화면일 때 가득 채우기*/
+                padding: 20px;
+            }
+
+            .title,
+            .two-title>h2 {
+                width: 100%;
+            }
+
+            .items {
+                width: 100%;
+                display: block;
+                justify-content: space-between;
+            }
+
+            .item {
+                width: 100%;
+            }
+
+            .item>img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 20px;
+            }
+
+            .two-items {
+                width: 100%;
+                display: block;
+            }
+
+            .two-item {
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+            .two-item img {
+                width: 100%;
+                height: 100;
+            }
+
+            .MENU {
+                display: none;
+            }
+
+            .bg-content>h1 {
+                font-size: 40px;
+            }
+
+            section {
+   
+                padding: 50px 0;
+            }
+
+            .title {
+                padding: 0 20px;
+            }
+
+            .title>h2,
+            .two-title>h2 {
+                font-size: 40px;
+
+            }
+            .bg-content{
+                width: 100%;
+                text-align: center;
+            }
+            .bg-content p {
+                line-height:1.4 ;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <h1 class="logo">ABOCADO</h1>
+            <div class="MENU">
+                <a href="" class="active">HOME</a>
+                <a href="">ABOUT</a>
+                <a href="">PROJECT</a>
+                <a href="">ABOCADO</a>
+                <a href="">ABO's FRINDS</a>
+                <a href="">NEWS</a>
+                <a href="">CS</a>
+            </div>
+        </div>
+
+        <div class="bg-content">
+            <h1>WHERE<span class="dot">'</span>ABO<span class="dot">?</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus commodi velit necessitatibus vitae
+                tempore dignissimos eaque. Esse cupiditate unde dolorem quidem ex optio illum.</p>
+            <div class="btn-gr">
+                <button type="" class="btn1">BUY OTHERS</button>
+                <button type="" class="btn2">NEW OTHERS</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="title">
+                <h2>best</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, eius obcaecati. Distinctio corporis
+                    similique soluta consequatur, illo odio totam impedit, quos natus quod, dolore nostrum eligendi quo
+                    voluptatum? Amet, reprehenderit?</p>
+            </div>
+            <div class="items">
+                <div class="item">
+                    <img src="images/ma.jpg" alt="" title="" />
+
+                </div>
+                <div class="item">
+                    <img src="images/sal.jpg" alt="" title="" />
+                </div>
+                <div class="item">
+                    <img src="images/ice.jpg" alt="" title="" />
+                </div>
+                <div class="item">
+                    <img src="images/jar.jpg" alt="" title="" />
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="two-title">
+                <h2>Sale Others</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, eius obcaecati. Distinctio corporis
+                    similique soluta consequatur, illo odio totam impedit, quos natus quod, dolore nostrum eligendi quo
+                    voluptatum? Amet, reprehenderit?</p>
+            </div>
+            <div class="two-items">
+                <div class="two-item">
+                    <div class="img-hidden">
+                        <img src="images/ma.jpg" alt="" title="" />
+                    </div>
+                    <div class="item-content">
+                        <h3>MACARON</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium inventore culpa porro
+                            dolor vero facilis dolorem obcaecati nisi?
+                        </p>
+                        <span class="price">$4</span>
+                    </div>
+                </div>
+
+                <div class="two-item">
+                    <div class="img-hidden">
+                        <img src="images/ice.jpg" alt="" title="" />
+                    </div>
+                    <div class="item-content">
+                        <h3>ICE CREAM
+                            <span class="new tag">BERRY</span>
+                        </h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, placeat.</p>
+                        <span class="price">$6</span>
+                    </div>
+                </div>
+                <div class="two-item">
+                    <div class="img-hidden">
+                        <img src="images/jar.jpg" alt="" title="" />
+                    </div>
+                    <div class="item-content">
+                        <h3>JAR SALAD<span class="hit tag">VEGAN</span></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, accusantium minus. Magnam
+                            modi ex deleniti sequi commodi consectetur impedit voluptatum officia facere nesciunt
+                            reiciendis nihil obcaecati similique, quam, omnis in!</p>
+                        <span class="price">$13</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="footer-menu"></div>
+        <div class="footer-copy">
+            <span>&copy;Copyright 2020. All Rights Reserved.</span></div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWL 캐러셀 예제</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href= "owlcarousel/assets/owl.theme.default.css">
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="owlcarousel/owl.carousel.js"></script>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    img{
+        height: 500px;
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="images/bana.jpg" />
+               
+            </div>
+            <div class="item">
+            <img src="images/berry.jpg" /> </div>
+            <div class="item">
+           <img src="images/ornge.jpg" /> </div>
+           <div class="item">
+            <img src="images/abo.jpg" /> </div>
+            <div class="item">
+            <img src="images/apple.jpg" /> </div>
+        </div>
+    </header>
+</body>
+<!-- 속도, 오토플레이, 루프 -->
+<script>
+    $(function(){
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+            autoplay:true,
+            autoplayTimeout: 2000,
+            margin:10,
+            loop: true,
+            responsibleClass: true,
+            responsive:{
+                0:{
+                    items:1,
+                    
+                },
+                800:{
+                    items:2
+                },
+                1200:{
+                    items:3,
+                    dots:false,
+                    nav:true
+                }
+
+            }
+
+        });
+    });
+</script>
+</html>

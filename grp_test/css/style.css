@@ -1,0 +1,245 @@
+@charset 'utf-8';
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    background-color:#B0BEC5;
+}
+
+.logo h1 {
+    color: black;
+    font-size: 30px;
+    margin: 40px ;
+    
+}
+
+.logo h3{
+    color: black;
+    font-size: 20px;
+    margin: 40px;
+}
+
+.admin-page{
+    width: 100%;
+    background-color: white;
+ 
+}
+
+.menu {
+    border-right: 1px solid #e8e8e8;
+    height: 100vh;
+    padding: 30px 20px;
+    width: 15%;
+    float: left;
+}
+
+.menu h4 {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.main {
+    height: 100vh;
+    padding: 30px 20px;
+    width: 85%;
+    float: left;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+.main-top .welcome {
+    float: left;
+    color: black;
+    font-weight: 600;
+}
+
+.menu ul {
+    margin-top: 10px;
+}
+
+.menu ul li  {
+    line-height: 1.5;
+}
+
+/* .menu ul li : hover{
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+} */
+
+.menu ul li a:hover {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.menu ul li a {
+    color: black;
+}
+
+
+.system-main {
+    padding: 0 8px;
+
+}
+
+h2 {
+    color:black;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.btn {
+
+    text-align: right;
+    margin-bottom: 10px;
+    
+
+}
+
+.mod {
+
+
+
+    display: inline-block;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #607D8B;
+    
+    color: black;
+
+}
+
+ .mod:hover {
+    cursor: pointer;
+    color: white;
+    transition: 0.1s;
+    font-weight: 700;
+    border: 2px solid black;
+    
+
+} 
+
+tr {
+    text-align: center;
+    border-top: 1px solid #e8e8e8; 
+    border-bottom: 1px solid #e8e8e8; 
+}
+
+
+tr:first-child {
+    background-color: #607D8B;
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+td:nth-child(1) {
+    width: 5%;
+}
+
+td:nth-child(2) {
+    width: 10%;
+}
+
+td:nth-child(3) {
+    width: 10%;
+}
+
+td:nth-child(4) {
+    width: 15%;
+}
+
+td:nth-child(5) {
+    width: 20%;
+}
+
+td:nth-child(6) {
+    width: 10%;
+}
+
+td:nth-child(7) {
+    width: 10%;
+}
+
+td:nth-child(8) {
+    width: 10%;
+}
+
+tr {
+    height: 45px;
+}
+
+
+
+.page-grp {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.page {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+   
+    color: black;
+}
+
+
+.page:hover {
+    cursor: pointer;
+    background-color: #607D8B;
+    color: white;
+    transition: 0.1s;
+    font-weight: 700;
+
+}
+
+.btn, .page 
+{
+    border: 0;
+    outline: 0;
+}
+button{
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.s-btn-on{
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 2px;
+    background-color: #607D8B;
+    border: 1px solid transparent;
+    color: white;
+    font-size: 12px;
+}
+
+.s-btn-off{
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 2px;
+    background-color: #edeff5;
+    border: 1px solid #d4d4d4;
+    color: black;
+    font-size: 12px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> click() & this & hide() </title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- 실제로 작업할려면 body 밑에 할것 -->
+    <script>
+        $(function(){
+            // html 태그는 ""만 하면 됨. class는 ".press"
+            $("p").click(function(){
+                // 같은 이름을 가지고 있는 현재 클릭하려는 그 것= this
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- img a span input 제외하고는 다 inline type -->
+
+    <p class="press">여기를 누르세요. 1번</p>
+    <p class="press">여기를 누르세요. 2번</p>
+    <p class="press">여기를 누르세요. 3번</p>
+
+</body>
+</html>

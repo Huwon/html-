@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+.page-left{
+    width: 13%;
+}
+/* left와 right의 width의 총합이 100%인데 100이 안되면 남는 %만큼 공백이 생김 */
+.page-right{
+    width: 86.7%;
+}
+
+.height40{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+a.active{
+    background-color: #607D8B;
+    font-weight: 700;
+}
+
+.tab{
+    width: 50%;
+    height: 35px;
+    float: left;
+    border: 1px solid #edeff5;
+    text-align-last: center;
+    line-height: 35px;
+    background-color: white;
+}

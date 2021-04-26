@@ -1,0 +1,150 @@
+@charset 'utf-8';
+
+.mem-tbl {
+    padding: 0 8px;
+
+}
+
+h2 {
+    color: tomato;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+tr {
+    text-align: center;
+}
+
+
+tr:first-child {
+    background-color: #6f809a;
+    color: white;
+}
+
+td:nth-child(1) {
+    width: 5%;
+}
+
+td:nth-child(2) {
+    width: 10%;
+}
+
+td:nth-child(3) {
+    width: 10%;
+}
+
+td:nth-child(4) {
+    width: 15%;
+}
+
+td:nth-child(5) {
+    width: 10%;
+}
+
+td:nth-child(6) {
+    width: 10%;
+}
+
+td:nth-child(7) {
+    width: 10%;
+}
+
+td:nth-child(8) {
+    width: 10%;
+}
+
+td:nth-child(9) {
+    width: 10%;
+}
+
+td:nth-child(10) {
+    width: 10%;
+}
+
+tr {
+    height: 45px;
+}
+
+tr:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+.mod {
+    width: 35px;
+    height: 25px;
+    background-color: #3f5ab5;
+    color: white;
+    font-size: 12px;
+}
+
+.del {
+    width: 35px;
+    height: 25px;
+    background-color: #d4d4d4;
+}
+
+/*page css*/
+.page-grp {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.page {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    /*한줄만 있을 때*/
+    border: 1px solid #dddddd;
+}
+
+/*
+.page:hover{
+    cursor: pointer;
+    background-color: #3f5ab5;
+    color: white;
+
+}
+ */
+
+.active {
+    cursor: pointer;
+    background-color: #3f5ab5;
+    color: white;
+}
+
+/*page css 끝*/
+
+/*form css*/
+.sel {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #dddddd;
+}
+
+.input {
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #dddddd;
+    padding: 0 4px;
+}
+
+.btn {
+    width: 60px;
+    height: 30px;
+    background-color: #3f5ab5;
+    color: white;
+    font-size: 12px;
+}
+
+.search-box {
+    text-align: right;
+    padding: 0 8px;
+}
+
+/*.form css*/

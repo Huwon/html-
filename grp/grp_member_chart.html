@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE SYSTEM</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+    <link rel="stylesheet" href="css/jquery.orgchart.css">
+
+
+    <script src="https://kit.fontawesome.com/62ab751ce0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="js/jquery.orgchart.js"></script>
+
+
+
+    <style>
+        .orgchart .top-level .title{
+            background-color: #f1801f;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+        }
+        .orgchart .high-level .title{
+            background-color: #777777;
+            color: white;
+        }
+        .orgchart .middle-level .title{
+            background-color: #bcbcbc;
+            color: white;
+        }
+        .orgchart .low-level .title{
+            background-color: #e0e0e0;
+           
+        }
+        .orgchart .bottom-level .title{
+            background-color: #f0f0f0;
+        
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrap bg-gray">
+        <div class="container p10">
+            <!-- 별도의 사각형을 주고 flex: contaqiner에는 flex 안함 -->
+            <div class="page-main-wrap flex flex-justify">
+                <!-- justify : 그룹웨어랑 로그인 정보를 끝과 끝으로 정렬 -->
+                <div class="page-left bg-white height40">
+                    <h1 class="noto center font18 "> 관리자페이지</h1>
+                </div>
+                <div class="page-right bg-white">
+                    <div class="page-info flex flex-justify   height40">
+                        <div class="auth">
+                            <span class="font16 weight700 noto">{접속자 - 접속권한 0등급}</span>
+                        </div>
+                        <div class="logout">
+                            <a href="grp_login.html" class="noto font16 weight700">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 넣고 높이 맞추기 -->
+            <div class="page-main-wrap flex flex-justify m-t10">
+
+                <div class="page-left bg-white p10 ">
+                    <div class="tree-wrap">
+                        <div id="sidetreecontrol" class="">
+                            <a href="#" class="tab active" id="open">전체닫기</a>
+                            <a href="#" class="tab" id="close">전체열기</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul id="tree">
+                            <li>
+                                <img src="images/folder-closed.gif" />사내조직/연락처 
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_member_list.html"> 사원목록</a></li>
+                                    <li><img src="images/folder.gif" />2. <a href="grp_member_register.html">사원등록</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3. <a href="grp_member_chart.html">조직도</a></li>
+                                    <li><img src="images/folder.gif" />4. <a href="grp_member_char_register.html">조직도
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />전자결재
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_approval_main.html"
+                                            target="_blank"> 전자결재
+                                            목록</a></li>
+
+                                </ul>                                                                   
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />게시판관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_board_create.html"> 게시판 생성</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />일정관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_calender_list.html"> 일정 목록</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />근태관리
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_attend_info.html"> 근태현황</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_attend_myinfo.html"> 인사정보</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />설문조사
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_survey_open.html"> 진행중인 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_survey_close.html"> 마감된 설문</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />3.<a href="#"> 내가 만든 설문</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />자료실
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_file_upload.html"> 문서양식</a>
+                                    </li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_file_upload.html"> 제품소개서</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />회사기본정보
+                                <ul>
+                                    <li><img src="images/folder.gif" />1.<a href="grp_company_info.html">회사기본정보</a></li>
+                                    <li><img src="images/folder.gif" />2.<a href="grp_company_info_register.html">회사기본정보
+                                            등록</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-right bg-white p10">
+                    <div class="page-main-wrap">
+                        <div class="page-member-top flex flex-justify">
+                            <div class="">
+                                <span class="btn-on">사원등록</span>
+                                <span class="btn-off">조직도등록</span>
+                            </div>
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3 class="tomato font18 noto m-t20">
+                                <i class="fas fa-feather-alt"></i>사원조직/연락처 > 3. 조직도
+                            </h3>
+                        </div>
+                        <div class="page-member-bottom">
+                            <div class="page-content">
+                                <div id="chart-container"></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/treeview.js"></script>
+<script src="js/tab.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var datascource = {
+            'name': '대표이사',
+            'title': 'CEO',
+            'className': 'top-level',
+            'children': [{
+                    'name': '관리부',
+                    'title': '관리부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '관리과',
+                        'title': '관리과장',
+                        'className': 'middle-level',
+                        'children': [{
+                            'name': '관리과',
+                            'title': '대리',
+                            'className': 'low-level',
+                            'children': [{
+                                'name': '관리과',
+                                'title': '사원',
+                                'className': 'bottom-level'
+                            }]
+                        }]
+                    }]
+
+                },
+                {
+                    'name': '기획부',
+                    'title': '기획부장',
+                    'className': 'high-level',
+                    'children': [{
+                            'name': '기획과',
+                            'title': '기획과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '기획과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '기획과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+
+                                }]
+                            }]
+                        }, {
+                            'name': 'TF팀',
+                            'title': 'TF팀장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': 'TF팀',
+                                'title': '팀원',
+                                'className': 'low-level',
+
+                            }]
+                        }
+
+                    ]
+
+                },
+                {
+                    'name': '인사부',
+                    'title': '인사부장',
+                    'className': 'high-level',
+                    'children': [{
+                            'name': '총무과',
+                            'title': '총무과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '총무과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '총무과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+
+                                }]
+                            }]
+                        },
+                        {
+                            'name': '인사과',
+                            'title': '인사과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '인사과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '인사과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+                                }]
+                            }]
+                        }
+                    ]
+                },
+                {
+                    'name': '영업부',
+                    'title': '영업부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '영업부',
+                        'title': '영업과장',
+                        'className': 'middle-level'
+                    }, {
+                        'name': '영업외주',
+                        'title': '영업팀장',
+                        'className': 'middle-level'
+                    }]
+                },
+                {
+                    'name': '생산부',
+                    'title': '생산부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '생산부',
+                        'title': '공장장',
+                        'className': 'middle-level'
+                    }]
+                },
+                {
+                    'name': '자재부',
+                    'title': '자재부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '재재부',
+                        'title': '자재처리부',
+                        'className': 'middle-level',
+                    }]
+                }
+            ]
+        };
+
+        $('#chart-container').orgchart({
+            'visibleLevel': 5,
+            'pan': true,
+            'data': datascource,
+            'nodeContent': 'title',
+            'createNode': function ($node, data) {
+                $node.on('click', function (event) {
+                    if (!$(event.target).is('.edge, .toggleBtn')) {
+                        var $this = $(this);
+                        var $chart = $this.closest('.orgchart');
+                        var newX = window.parseInt(($chart.outerWidth(true) / 2) - ($this
+                            .offset().left - $chart.offset().left) - ($this
+                            .outerWidth(true) / 2));
+                        var newY = window.parseInt(($chart.outerHeight(true) / 2) - ($this
+                            .offset().top - $chart.offset().top) - ($this
+                            .outerHeight(true) / 2));
+                        $chart.css('transform', 'matrix(1, 0, 0, 1, ' + newX + ', ' + newY +
+                            ')');
+                    }
+                });
+            }
+        });
+
+    });
+</script>
+</html>
